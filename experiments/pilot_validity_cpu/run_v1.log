@@ -1,0 +1,16 @@
+train:trial_T20190909_151853_245524:0 valid=True
+train:trial_T20190907_224507_776787:0 valid=True
+val:trial_T20190908_164236_518264:0 valid=True
+val:trial_T20190908_033721_967359:0 valid=True
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/hly/agent-research/pilot_validity/run.py", line 269, in <module>
+    if __name__ == '__main__':
+  File "/home/hly/agent-research/pilot_validity/run.py", line 265, in main
+    else:
+  File "/home/hly/agent-research/pilot_validity/run.py", line 220, in execute
+    with (output / 'frozen_models_before_test.pkl').open('xb') as f:
+AttributeError: Can't pickle local object 'fit_binary_classifier.<locals>.ConstantProbabilityModel'

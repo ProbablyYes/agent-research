@@ -1,0 +1,297 @@
+train:trial_T20190909_151853_245524:0 valid=True
+train:trial_T20190907_224507_776787:0 valid=True
+val:trial_T20190908_164236_518264:0 valid=True
+val:trial_T20190908_033721_967359:0 valid=True
+test:trial_T20190908_022321_380927:0 valid=True
+test:trial_T20190909_064053_839817:0 valid=True
+{
+  "label": "SYNTHETIC_POLICY_REAL_ENV",
+  "by_split": {
+    "train": {
+      "attempted": 2,
+      "valid": 2,
+      "invalid": 0
+    },
+    "val": {
+      "attempted": 2,
+      "valid": 2,
+      "invalid": 0
+    },
+    "test": {
+      "attempted": 2,
+      "valid": 2,
+      "invalid": 0
+    }
+  },
+  "evaluation": {
+    "valid_pairs": {
+      "denominators": {
+        "attempted": 2,
+        "valid": 2,
+        "invalid": 0,
+        "coverage": 1.0,
+        "invalid_ids": []
+      },
+      "policies": {
+        "original": {
+          "actions": [
+            "quit",
+            "quit"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": 0.0,
+            "success_rate": 0.0,
+            "control_regret": 0.0,
+            "verify_rate": 0.0,
+            "quit_rate": 1.0
+          }
+        },
+        "corrected": {
+          "actions": [
+            "quit",
+            "quit"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": 0.0,
+            "success_rate": 0.0,
+            "control_regret": 0.0,
+            "verify_rate": 0.0,
+            "quit_rate": 1.0
+          }
+        },
+        "always_continue": {
+          "actions": [
+            "continue",
+            "continue"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": -1.03,
+            "success_rate": 0.0,
+            "control_regret": 1.03,
+            "verify_rate": 0.0,
+            "quit_rate": 0.0
+          }
+        },
+        "always_verify": {
+          "actions": [
+            "verify",
+            "verify"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": -1.08,
+            "success_rate": 0.0,
+            "control_regret": 1.08,
+            "verify_rate": 1.0,
+            "quit_rate": 0.0
+          }
+        },
+        "always_quit": {
+          "actions": [
+            "quit",
+            "quit"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": 0.0,
+            "success_rate": 0.0,
+            "control_regret": 0.0,
+            "verify_rate": 0.0,
+            "quit_rate": 1.0
+          }
+        }
+      },
+      "test_selected_policy": null,
+      "scope": "valid pairs only; not an unbiased full-task estimate when coverage < 1",
+      "original_explicit_eu": {
+        "actions": [
+          "quit",
+          "quit"
+        ],
+        "metrics": {
+          "n": 2,
+          "utility": 0.0,
+          "success_rate": 0.0,
+          "control_regret": 0.0,
+          "verify_rate": 0.0,
+          "quit_rate": 1.0
+        },
+        "future_step_cost_omitted": true,
+        "realized_steps_used_for_decisions": false
+      }
+    },
+    "original_raw": {
+      "denominators": {
+        "attempted": 2,
+        "valid": 2,
+        "invalid": 0,
+        "coverage": 1.0,
+        "invalid_ids": []
+      },
+      "policies": {
+        "original": {
+          "actions": [
+            "quit",
+            "quit"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": 0.0,
+            "success_rate": 0.0,
+            "control_regret": 0.0,
+            "verify_rate": 0.0,
+            "quit_rate": 1.0
+          }
+        },
+        "corrected": {
+          "actions": [
+            "quit",
+            "quit"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": 0.0,
+            "success_rate": 0.0,
+            "control_regret": 0.0,
+            "verify_rate": 0.0,
+            "quit_rate": 1.0
+          }
+        },
+        "always_continue": {
+          "actions": [
+            "continue",
+            "continue"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": -1.03,
+            "success_rate": 0.0,
+            "control_regret": 1.03,
+            "verify_rate": 0.0,
+            "quit_rate": 0.0
+          }
+        },
+        "always_verify": {
+          "actions": [
+            "verify",
+            "verify"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": -1.08,
+            "success_rate": 0.0,
+            "control_regret": 1.08,
+            "verify_rate": 1.0,
+            "quit_rate": 0.0
+          }
+        },
+        "always_quit": {
+          "actions": [
+            "quit",
+            "quit"
+          ],
+          "metrics": {
+            "n": 2,
+            "utility": 0.0,
+            "success_rate": 0.0,
+            "control_regret": 0.0,
+            "verify_rate": 0.0,
+            "quit_rate": 1.0
+          }
+        }
+      },
+      "test_selected_policy": null,
+      "scope": "valid pairs only; not an unbiased full-task estimate when coverage < 1",
+      "original_explicit_eu": {
+        "actions": [
+          "quit",
+          "quit"
+        ],
+        "metrics": {
+          "n": 2,
+          "utility": 0.0,
+          "success_rate": 0.0,
+          "control_regret": 0.0,
+          "verify_rate": 0.0,
+          "quit_rate": 1.0
+        },
+        "future_step_cost_omitted": true,
+        "realized_steps_used_for_decisions": false
+      }
+    }
+  },
+  "controls": {
+    "valid_pairs": {
+      "original": {
+        "verify_threshold": 1.0,
+        "quit_threshold": 1.0,
+        "utility": 0.0,
+        "success_rate": 0.0,
+        "catastrophic_failure_rate": 0.0,
+        "intervention_rate": 1.0,
+        "verify_rate": 0.0,
+        "quit_rate": 1.0,
+        "harmful_intervention_rate": 0.0,
+        "control_regret": 0.0
+      },
+      "corrected": {
+        "verify_threshold": -1.0,
+        "quit_threshold": -1.0,
+        "n": 2,
+        "utility": 0.0,
+        "success_rate": 0.0,
+        "control_regret": 0.0,
+        "verify_rate": 0.0,
+        "quit_rate": 1.0
+      },
+      "selection_split": "val",
+      "train_ids": [
+        "train:trial_T20190909_151853_245524:0",
+        "train:trial_T20190907_224507_776787:0"
+      ],
+      "val_ids": [
+        "val:trial_T20190908_164236_518264:0",
+        "val:trial_T20190908_033721_967359:0"
+      ]
+    },
+    "original_raw": {
+      "original": {
+        "verify_threshold": 1.0,
+        "quit_threshold": 1.0,
+        "utility": 0.0,
+        "success_rate": 0.0,
+        "catastrophic_failure_rate": 0.0,
+        "intervention_rate": 1.0,
+        "verify_rate": 0.0,
+        "quit_rate": 1.0,
+        "harmful_intervention_rate": 0.0,
+        "control_regret": 0.0
+      },
+      "corrected": {
+        "verify_threshold": -1.0,
+        "quit_threshold": -1.0,
+        "n": 2,
+        "utility": 0.0,
+        "success_rate": 0.0,
+        "control_regret": 0.0,
+        "verify_rate": 0.0,
+        "quit_rate": 1.0
+      },
+      "selection_split": "val",
+      "train_ids": [
+        "train:trial_T20190909_151853_245524:0",
+        "train:trial_T20190907_224507_776787:0"
+      ],
+      "val_ids": [
+        "val:trial_T20190908_164236_518264:0",
+        "val:trial_T20190908_033721_967359:0"
+      ]
+    }
+  },
+  "native_state_equivalence_proven": false,
+  "no_resampling": true,
+  "cost_predictor_added": false
+}

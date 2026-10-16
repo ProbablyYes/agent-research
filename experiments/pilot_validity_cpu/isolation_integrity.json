@@ -1,0 +1,17 @@
+{
+  "implementation_commit": "70a3390e9739e47a504967682c69daf48d8086e4",
+  "branch": "pilot-validity-hardening",
+  "upstream_all_previously_hashed_files_unchanged": true,
+  "prior_reports_and_results_unchanged": true,
+  "ast_files_passed": 7,
+  "source_and_tests_sha256": {
+    "pilot_validity/attest.py": "64de77df435161a3ea7429104e03ffa45529d5c978e951ee31264e8c6e0708f1",
+    "pilot_validity/core.py": "68db7aa8df55302668395036dc9b071131a5bacf56bfd489411e3f4012be26fe",
+    "pilot_validity/__init__.py": "773e61ec64edb45824d7a2ab2a3be5b4394362ef2174474089f2fd4b6aac0897",
+    "pilot_validity/run.py": "2accc42735aea7f138931f50839aac34a5fcedc24e21f90ed83cec8d6a638d74",
+    "tests/pilot_validity/test_provenance.py": "3a6882be4c40e27f29634acbff0815d2da7500c23a6cdb9744f78e240c0d80b8",
+    "tests/pilot_validity/verify_artifacts.py": "04b1d12989a05a3afb210c57b3a6da7074badadf2d8fe4ac930270a22449447e",
+    "tests/pilot_validity/test_validity.py": "842c42af9d61cab5c7bd364cc8153b78e809cb91add735d64ab561c36b520714"
+  },
+  "real_plan_sha256": "3179fa6ce944390a118dc309215acff241d376a721327c4e3f748294be768f61"
+}

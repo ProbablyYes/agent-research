@@ -1,0 +1,34 @@
+{
+  "frozen_final_plan_valid": true,
+  "reloaded_real_environment_branch_outcomes_and_costs": 12,
+  "valid_pairs": 6,
+  "freeze_event_index": 108,
+  "first_test_environment_event_index": 109,
+  "author_raw_failure_result_exact_match": true,
+  "reused_smoke_checks_passed": 6,
+  "constant_risk_counterexample": {
+    "original": {
+      "verify_threshold": 0.0,
+      "quit_threshold": 0.0,
+      "utility": 0.0,
+      "success_rate": 0.0,
+      "catastrophic_failure_rate": 0.0,
+      "intervention_rate": 1.0,
+      "verify_rate": 0.0,
+      "quit_rate": 1.0,
+      "harmful_intervention_rate": 1.0,
+      "control_regret": 0.9499999999999998
+    },
+    "corrected": {
+      "verify_threshold": 2.0,
+      "quit_threshold": 2.0,
+      "n": 3,
+      "utility": 0.9499999999999998,
+      "success_rate": 1.0,
+      "control_regret": 0.0,
+      "verify_rate": 0.0,
+      "quit_rate": 0.0
+    },
+    "validation_only": true
+  }
+}

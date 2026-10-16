@@ -1,0 +1,30 @@
+/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/pddl/pddl.py:53: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_cool_then_place_in_recep-Potato-None-Microwave-18/trial_T20190909_151853_245524/game.tw-pddl' mode='r' encoding='UTF-8'>
+  data = json.load(open(filename_or_data))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_noninitial_checkpoint_both_branches (test_validity.RealEnvironmentTests) ... ok
+test_original_upstream_still_clean (test_validity.RealEnvironmentTests) ... ok
+test_raw_outputs_match_uninstrumented_original (test_validity.RealEnvironmentTests) ... ok
+test_real_mismatch_persisted_both_branches (test_validity.RealEnvironmentTests) ... ok
+test_recompute_real_costs (test_validity.RealEnvironmentTests) ... ok
+test_all_simple_policies_are_representable (test_validity.UnitTests) ... ok
+test_commands_order_mismatch (test_validity.UnitTests) ... ok
+test_constant_model_serialization (test_validity.UnitTests) ... ok
+test_constant_risk_counterexample (test_validity.UnitTests) ... ok
+test_done_won_and_budget_mismatch (test_validity.UnitTests) ... ok
+test_future_lengths_do_not_enter_features (test_validity.UnitTests) ... ok
+test_hidden_fact_mismatch (test_validity.UnitTests) ... ok
+test_http_requires_evidence_before_client_creation (test_validity.UnitTests) ... ok
+test_intermediate_mismatch_not_just_endpoint (test_validity.UnitTests) ... ok
+test_invalid_pair_denominator (test_validity.UnitTests) ... ok
+test_metric_length_and_invalid_actions_rejected (test_validity.UnitTests) ... ok
+test_metrics_match_original (test_validity.UnitTests) ... ok
+test_missing_fields_fail_closed (test_validity.UnitTests) ... ok
+test_no_valid_training_or_validation_blocks (test_validity.UnitTests) ... ok
+test_observation_mismatch (test_validity.UnitTests) ... ok
+test_original_context_restored_on_error (test_validity.UnitTests) ... ok
+test_test_label_mutation_cannot_select_policy (test_validity.UnitTests) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 165.797s
+
+OK

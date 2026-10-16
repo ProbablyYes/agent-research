@@ -1,0 +1,8 @@
+{
+  "original_source_sha256": "ad3a52f752b59a398a74201ed992fbe5734c7298cfc015ec07e60c90854da486",
+  "only_change": {
+    "from": "OUT=ROOT/'experiments/cinc_smoke_20261016'",
+    "to": "OUT=ROOT/'experiments/pilot_validity_cpu/reused_smoke'"
+  },
+  "reason": "preserve all previous outputs; full original smoke including real environments"
+}

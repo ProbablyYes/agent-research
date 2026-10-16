@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "label": "REAL_MODEL_NOT_YET_RUN",
+  "upstream_commit": "9e3825b7eea89ee9dc88f1ccd11f277f8e10beb3",
+  "research_parent_commit": "70a3390e9739e47a504967682c69daf48d8086e4",
+  "tasks": [
+    {
+      "split": "train",
+      "gamefile": "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_cool_then_place_in_recep-Potato-None-Microwave-18/trial_T20190909_151853_245524/game.tw-pddl",
+      "task_id": "trial_T20190909_151853_245524",
+      "task_type": "pick_cool_then_place_in_recep",
+      "file_sha256": {
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_cool_then_place_in_recep-Potato-None-Microwave-18/trial_T20190909_151853_245524/game.tw-pddl": "d18b831d36c6c0026a6d5b333f4b80273c06832ec09aa828f6315927ada0e59e",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_cool_then_place_in_recep-Potato-None-Microwave-18/trial_T20190909_151853_245524/initial_state.pddl": "f2505f9570eae3e18defb8d1797968102e14c50fc59aead3189a636218d4b225",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_cool_then_place_in_recep-Potato-None-Microwave-18/trial_T20190909_151853_245524/traj_data.json": "8aee32cfff3c7b73d307a502604d20992a48b30a95f7b73983fdf79a92025a57"
+      },
+      "checkpoint_index": 0
+    },
+    {
+      "split": "train",
+      "gamefile": "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_heat_then_place_in_recep-Egg-None-Fridge-20/trial_T20190907_224507_776787/game.tw-pddl",
+      "task_id": "trial_T20190907_224507_776787",
+      "task_type": "pick_heat_then_place_in_recep",
+      "file_sha256": {
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_heat_then_place_in_recep-Egg-None-Fridge-20/trial_T20190907_224507_776787/game.tw-pddl": "d298d88405299b48eaf22c9e5393f633bf4b109013e7a5eb22633e3c958fa8f5",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_heat_then_place_in_recep-Egg-None-Fridge-20/trial_T20190907_224507_776787/initial_state.pddl": "4260760906c6c4887cc98b3d233906547e90514bdb20db37973ca145535754a6",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_heat_then_place_in_recep-Egg-None-Fridge-20/trial_T20190907_224507_776787/traj_data.json": "6f384e94a35c6dfcf7602fe9074ecbfa3228212a904a3b634f43a1dc5f3fb13c"
+      },
+      "checkpoint_index": 0
+    },
+    {
+      "split": "val",
+      "gamefile": "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_two_obj_and_place-SprayBottle-None-GarbageCan-419/trial_T20190908_164236_518264/game.tw-pddl",
+      "task_id": "trial_T20190908_164236_518264",
+      "task_type": "pick_two_obj_and_place",
+      "file_sha256": {
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_two_obj_and_place-SprayBottle-None-GarbageCan-419/trial_T20190908_164236_518264/game.tw-pddl": "804d324448334c2c3e3cf9cdd61d29296ebdc39573fc39ffba3f90dfda8d44d1",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_two_obj_and_place-SprayBottle-None-GarbageCan-419/trial_T20190908_164236_518264/initial_state.pddl": "2439b6a38b3b5185bb71df39dccb6f8396bd8b6ff09fdb449b5b07baa9014b85",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_two_obj_and_place-SprayBottle-None-GarbageCan-419/trial_T20190908_164236_518264/traj_data.json": "dace14b91abd1d6cd406706f9f98de36d8ecb37d060353280f1f9b1a801a9a88"
+      },
+      "checkpoint_index": 0
+    },
+    {
+      "split": "val",
+      "gamefile": "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-24/trial_T20190908_033721_967359/game.tw-pddl",
+      "task_id": "trial_T20190908_033721_967359",
+      "task_type": "pick_heat_then_place_in_recep",
+      "file_sha256": {
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-24/trial_T20190908_033721_967359/game.tw-pddl": "52881a67407a92a0391a4fc19bb10e0029c76a0bb034494e761a7a7d01dd1b68",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-24/trial_T20190908_033721_967359/initial_state.pddl": "5188c633521cbd0e838dd7cb957c648770648964580a812a82e8985a928820c4",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-24/trial_T20190908_033721_967359/traj_data.json": "73b8e78bf4852c9feb0d7dc06415d534d612c2256265966b0190e4cd8fb20118"
+      },
+      "checkpoint_index": 0
+    },
+    {
+      "split": "test",
+      "gamefile": "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/game.tw-pddl",
+      "task_id": "trial_T20190908_022321_380927",
+      "task_type": "pick_clean_then_place_in_recep",
+      "file_sha256": {
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/game.tw-pddl": "521c47442242bbfdfcc4333b37839e8eb04e168c7394570deba69fc90da18d5e",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/initial_state.pddl": "d406d1f7646a6f800698bb920cba636d4913f7008320f5267c400895b31002f5",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/receps.json": "11a11f39a93d104d17bf5fd0ea95643bfaaa7654fd379fa6bfbf9db27c533691",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/traj_data.json": "baaec4a16c91d10a73ec45390cbf67ebcbcc33477b3cd7681f82e6a34d3b1c47"
+      },
+      "checkpoint_index": 0
+    },
+    {
+      "split": "test",
+      "gamefile": "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_two_obj_and_place-SoapBar-None-GarbageCan-424/trial_T20190909_064053_839817/game.tw-pddl",
+      "task_id": "trial_T20190909_064053_839817",
+      "task_type": "pick_two_obj_and_place",
+      "file_sha256": {
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_two_obj_and_place-SoapBar-None-GarbageCan-424/trial_T20190909_064053_839817/game.tw-pddl": "78bc903632973d31f559832307cc248553715c98d6d123a4df7bf3cade6a721a",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_two_obj_and_place-SoapBar-None-GarbageCan-424/trial_T20190909_064053_839817/initial_state.pddl": "a2a345db3562fc587108d8a1a08183c9c107383aebc2ba0854d11c6d277cace6",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_two_obj_and_place-SoapBar-None-GarbageCan-424/trial_T20190909_064053_839817/receps.json": "11a311476707da8f147766276bda4408b826fccef96410c36e6766dba0989456",
+        "/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_two_obj_and_place-SoapBar-None-GarbageCan-424/trial_T20190909_064053_839817/traj_data.json": "57accc57c7a94f37e21064041d6ae285a4358ca8eef907ae54a35cd710247832"
+      },
+      "checkpoint_index": 0
+    }
+  ],
+  "config": {
+    "seed": 13,
+    "train_games": 2,
+    "val_games": 2,
+    "test_games": 2,
+    "prefixes_per_game": 1,
+    "max_episode_steps": 20,
+    "action_max_tokens": 24,
+    "confidence_max_tokens": 8,
+    "verify_max_tokens": 24,
+    "batch_size": 1,
+    "verify_cost": 0.05,
+    "wrong_penalty": 1.0,
+    "step_cost": 0.01,
+    "intervention_mode": "expert_defer",
+    "verify_mode": "no_preview",
+    "repair_horizon": 3,
+    "expert_max_policy_steps": -1,
+    "expert_noise_rate": 0.0
+  },
+  "model": {
+    "name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "tokenizer_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "api_base": "http://127.0.0.1:18080",
+    "interface": "chat_completions",
+    "temperature": 0.0,
+    "api_timeout": 60.0,
+    "request_seed": null,
+    "server_seed": 13,
+    "dtype": "half",
+    "max_model_len": 8192,
+    "vllm": "0.6.6",
+    "transformers": "4.46.3",
+    "gpu_memory_utilization": 0.6,
+    "max_num_seqs": 1,
+    "enforce_eager": true,
+    "runtime_verified": false
+  },
+  "package_versions": {
+    "numpy": "2.2.6",
+    "scikit-learn": "1.7.2",
+    "alfworld": "0.4.2",
+    "textworld": "1.7.0",
+    "requests": "2.34.2",
+    "cloudpickle": "3.1.2"
+  },
+  "source_sha256": {
+    "/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/batch/batch_env.py": "4fffe8e2ceaec86d68d085d1cc30a8a3500e8e2b40d10f593e7b40f27bb192fc",
+    "/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/pddl/pddl.py": "3795f5fb7471c7a4551e137267785ffb3e21e49653d17491d6be963b41f454b4",
+    "/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/wrappers/limit.py": "8e8b8a5b8bbc8ebebe5aef3a754cb10b226c3788b43bc3e16cce908add0ff8d8",
+    "/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/gym/envs/textworld_batch.py": "8dec4478630707e1e4c5e7f0f96a8670bcb2ffb3c5c498cb98760b7102d2e0c3",
+    "/home/hly/agent-research/calibration-is-not-control/requirements.txt": "8f66d767bb3a4d9adf2f897de473144f402162c5e5518b61346b4404b6fabf3c",
+    "/home/hly/agent-research/calibration-is-not-control/scripts/collect_alfworld_branches.py": "378f97fb9b0e2ce2a6be2a29cfd670cf297adbd401215fe4780fdb8d8e7e87d9",
+    "/home/hly/agent-research/calibration-is-not-control/scripts/evaluate_controllers.py": "c71e7787b0ecc63ab640fd6d7bafe1748a2498d84142c23e3710736f21e242b9",
+    "/home/hly/agent-research/calibration-is-not-control/src/oversight_branching/__init__.py": "de6b645aed994d175799fad889bca486e97846031fb7b3e7567875608a45d7ab",
+    "/home/hly/agent-research/calibration-is-not-control/src/oversight_branching/alfworld_text.py": "670504c3ffac88a6dfee5626ea345c2530b995b79e2f88d047c79ccc845e3cdb",
+    "/home/hly/agent-research/calibration-is-not-control/src/oversight_branching/local_llm.py": "4d4c8011197c682473a7151419f27f0dcee1cac9ab6bf0acb31bfba053d53642",
+    "/home/hly/agent-research/calibration-is-not-control/src/oversight_branching/policy_learning.py": "3f089e34404c16a3ea50f605235ca8cae43033fbbdbc1ebb00c8c2daaaf2e8f7",
+    "/home/hly/agent-research/pilot_validity/__init__.py": "773e61ec64edb45824d7a2ab2a3be5b4394362ef2174474089f2fd4b6aac0897",
+    "/home/hly/agent-research/pilot_validity/attest.py": "64de77df435161a3ea7429104e03ffa45529d5c978e951ee31264e8c6e0708f1",
+    "/home/hly/agent-research/pilot_validity/core.py": "68db7aa8df55302668395036dc9b071131a5bacf56bfd489411e3f4012be26fe",
+    "/home/hly/agent-research/pilot_validity/run.py": "2accc42735aea7f138931f50839aac34a5fcedc24e21f90ed83cec8d6a638d74"
+  },
+  "prompt_templates": {
+    "build_confidence_prompt": "def build_confidence_prompt(task_desc: str, observation: str, history_text: str, proposed_action: str) -> str:\n    return (\n        \"Estimate how likely the proposed next action is to keep the ALFWorld trajectory on track toward success.\\n\"\n        \"Be calibrated and conservative. Use 100 only when the action is very likely to be the right move.\\n\"\n        \"Return exactly one line and nothing else:\\n\"\n        \"CONFIDENCE: <0-100>\\n\\n\"\n        \"Task:\\n\"\n        f\"{task_desc}\\n\\n\"\n        \"Recent history:\\n\"\n        f\"{history_text}\\n\\n\"\n        \"Current observation:\\n\"\n        f\"{observation}\\n\\n\"\n        \"Proposed action:\\n\"\n        f\"{proposed_action}\"\n    )\n",
+    "build_continue_prompt": "def build_continue_prompt(task_desc: str, observation: str, history_text: str, admissible_commands: List[str]) -> str:\n    commands = \"\\n\".join(f\"- {command}\" for command in admissible_commands)\n    return (\n        \"You are controlling an ALFWorld text agent.\\n\"\n        \"Choose the single best next action to make progress on the task.\\n\"\n        \"You must copy one action exactly from the admissible command list.\\n\"\n        \"Return exactly one line and nothing else:\\n\"\n        \"ACTION: <one admissible command>\\n\\n\"\n        \"Task:\\n\"\n        f\"{task_desc}\\n\\n\"\n        \"Recent history:\\n\"\n        f\"{history_text}\\n\\n\"\n        \"Current observation:\\n\"\n        f\"{observation}\\n\\n\"\n        \"Admissible commands:\\n\"\n        f\"{commands}\"\n    )\n",
+    "build_followup_replan_prompt": "def build_followup_replan_prompt(\n    task_desc: str,\n    observation: str,\n    history_text: str,\n    repair_plan: str,\n    admissible_commands: List[str],\n    remaining_repair_steps: int,\n) -> str:\n    commands = \"\\n\".join(f\"- {command}\" for command in admissible_commands)\n    return (\n        \"You are continuing a bounded repair rollout in ALFWorld.\\n\"\n        \"Choose the next action that best follows the repair plan while making concrete progress.\\n\"\n        f\"There are {remaining_repair_steps} repair step(s) left, including this one.\\n\"\n        \"Return exactly one line and nothing else:\\n\"\n        \"ACTION: <one admissible command>\\n\\n\"\n        \"Task:\\n\"\n        f\"{task_desc}\\n\\n\"\n        \"Repair plan:\\n\"\n        f\"{repair_plan}\\n\\n\"\n        \"Recent history:\\n\"\n        f\"{history_text}\\n\\n\"\n        \"Current observation:\\n\"\n        f\"{observation}\\n\\n\"\n        \"Admissible commands:\\n\"\n        f\"{commands}\"\n    )\n",
+    "build_plan_repair_prompt": "def build_plan_repair_prompt(\n    task_desc: str,\n    observation: str,\n    history_text: str,\n    proposed_action: str,\n    admissible_commands: List[str],\n    repair_horizon: int,\n) -> str:\n    commands = \"\\n\".join(f\"- {command}\" for command in admissible_commands)\n    return (\n        \"You are repairing an ALFWorld trajectory after the previously proposed action may have gone off track.\\n\"\n        \"First produce a short repair plan, then choose the best immediate next action.\\n\"\n        f\"You have up to {repair_horizon} repair steps total before normal execution resumes.\\n\"\n        \"The first action may match the previous proposal only if it still fits a better repair plan.\\n\"\n        \"Return exactly two lines and nothing else:\\n\"\n        \"PLAN: <short repair plan>\\n\"\n        \"ACTION: <one admissible command>\\n\\n\"\n        \"Task:\\n\"\n        f\"{task_desc}\\n\\n\"\n        \"Recent history:\\n\"\n        f\"{history_text}\\n\\n\"\n        \"Current observation:\\n\"\n        f\"{observation}\\n\\n\"\n        \"Possibly bad proposed action:\\n\"\n        f\"{proposed_action}\\n\\n\"\n        \"Admissible commands:\\n\"\n        f\"{commands}\"\n    )\n",
+    "build_reflect_retry_prompt": "def build_reflect_retry_prompt(\n    task_desc: str,\n    observation: str,\n    history_text: str,\n    proposed_action: str,\n    admissible_commands: List[str],\n) -> str:\n    alternative_commands = [\n        command\n        for command in admissible_commands\n        if normalize_action(command) != normalize_action(proposed_action)\n    ]\n    if not alternative_commands:\n        alternative_commands = admissible_commands\n    commands = \"\\n\".join(f\"- {command}\" for command in alternative_commands)\n    return (\n        \"You are intervening in an ALFWorld trajectory because the previously proposed action may be wrong.\\n\"\n        \"Briefly identify the likely problem with the proposed action, then choose a better admissible next action.\\n\"\n        \"Choose an admissible command that is DIFFERENT from the proposed action.\\n\"\n        \"Return exactly two lines and nothing else:\\n\"\n        \"REFLECTION: <one short sentence>\\n\"\n        \"ACTION: <one admissible command different from the proposed action>\\n\\n\"\n        \"Task:\\n\"\n        f\"{task_desc}\\n\\n\"\n        \"Recent history:\\n\"\n        f\"{history_text}\\n\\n\"\n        \"Current observation:\\n\"\n        f\"{observation}\\n\\n\"\n        \"Proposed action:\\n\"\n        f\"{proposed_action}\\n\\n\"\n        \"Admissible commands:\\n\"\n        f\"{commands}\"\n    )\n",
+    "build_replan_prompt": "def build_replan_prompt(\n    task_desc: str,\n    observation: str,\n    history_text: str,\n    proposed_action: str,\n    admissible_commands: List[str],\n    remaining_repair_steps: int,\n) -> str:\n    commands = \"\\n\".join(f\"- {command}\" for command in admissible_commands)\n    proposed_block = (\n        \"Possibly bad proposed action:\\n\"\n        f\"{proposed_action}\\n\\n\"\n        if proposed_action\n        else \"\"\n    )\n    return (\n        \"You are repairing an ALFWorld trajectory after the previously proposed action may have gone off track.\\n\"\n        \"You have a small repair budget and should choose the single best next action to recover progress toward the task.\\n\"\n        \"Do not repeat the possibly bad proposed action unless it is clearly still the best move.\\n\"\n        f\"There are {remaining_repair_steps} repair step(s) left in this repair mode, including this one.\\n\"\n        \"Return exactly one line and nothing else:\\n\"\n        \"ACTION: <one admissible command>\\n\\n\"\n        \"Task:\\n\"\n        f\"{task_desc}\\n\\n\"\n        \"Recent history:\\n\"\n        f\"{history_text}\\n\\n\"\n        \"Current observation:\\n\"\n        f\"{observation}\\n\\n\"\n        f\"{proposed_block}\"\n        \"Admissible commands:\\n\"\n        f\"{commands}\"\n    )\n",
+    "build_verify_prompt": "def build_verify_prompt(\n    task_desc: str,\n    observation: str,\n    history_text: str,\n    proposed_action: str,\n    admissible_commands: List[str],\n) -> str:\n    alternative_commands = [\n        command\n        for command in admissible_commands\n        if normalize_action(command) != normalize_action(proposed_action)\n    ]\n    if not alternative_commands:\n        alternative_commands = admissible_commands\n    commands = \"\\n\".join(f\"- {command}\" for command in alternative_commands)\n    return (\n        \"You are choosing a corrective action for an ALFWorld text agent.\\n\"\n        \"The system has already considered the proposed action below.\\n\"\n        \"Your job is to propose the best alternative next action if we intervene.\\n\"\n        \"Choose an admissible command that is DIFFERENT from the proposed action.\\n\"\n        \"Prefer actions that repair a likely mistake or open a better path to the task goal.\\n\"\n        \"Return exactly one line and nothing else:\\n\"\n        \"ACTION: <one admissible command different from the proposed action>\\n\\n\"\n        \"Task:\\n\"\n        f\"{task_desc}\\n\\n\"\n        \"Recent history:\\n\"\n        f\"{history_text}\\n\\n\"\n        \"Current observation:\\n\"\n        f\"{observation}\\n\\n\"\n        \"Proposed action:\\n\"\n        f\"{proposed_action}\\n\\n\"\n        \"Admissible commands:\\n\"\n        f\"{commands}\"\n    )\n"
+  },
+  "environment": {
+    "PYTHONHASHSEED": "13",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "environment_seed": 1234,
+  "environment_seed_scope": "upstream TextworldBatchGymEnv default single-game shuffle; native planner RNG state is not exported",
+  "task_selection": "first two of each split in the previously saved seed13/14/15 manifest; no fresh os.walk/shuffle",
+  "interpretation": "six initial checkpoints only, engineering pilot; not mid-episode timing research",
+  "native_state_equivalence_proven": false
+}

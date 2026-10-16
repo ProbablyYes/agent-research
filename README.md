@@ -39,3 +39,12 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 ```
 
 此操作会更新专用 Smoke Test 输出；首次失败日志也予保留。测试不调用真实语言模型。真实模型方案需要单独安排 GPU 时段，不能自动从 Smoke Test 进入大型实验。
+
+## 真实 Pilot 前的可信性加固
+
+独立分支 `pilot-validity-hardening` 保留原作者实现与旧证据，通过适配器增加双分支回放审计、独立成本重算、冻结任务清单和公平baseline对照。真实模型尚未运行；当前整体 **No-Go**，CPU工程检查结果与剩余条件分别记录：
+
+- [加固内容与方法性改动](reports/PILOT_VALIDITY_FIXES.md)
+- [回放验证与CPU测试](reports/REPLAY_VALIDATION_RESULTS.md)
+- [公平Baseline与信息边界](reports/FAIR_BASELINE_CHECK.md)
+- [真实Pilot Go / No-Go与准确命令](reports/REAL_PILOT_GO_NO_GO.md)
