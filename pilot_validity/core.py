@@ -18,7 +18,11 @@ UPSTREAM_COMMIT = '9e3825b7eea89ee9dc88f1ccd11f277f8e10beb3'
 
 
 def sha(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    value = hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for block in iter(lambda: stream.read(8 * 1024 * 1024), b''):
+            value.update(block)
+    return value.hexdigest()
 
 
 def digest(value):
@@ -299,7 +303,8 @@ def evaluate_frozen(model, controls, records):
     for name in ('original', 'corrected'):
         c = controls[name]
         actions = route(scores, c['verify_threshold'], c['quit_threshold'])
-        policies[name] = {'actions': actions, 'metrics': independent_metrics(rows, actions)}
+        policies[name] = {'actions': actions, 'metrics': independent_metrics(rows, actions),
+                          'author_metrics': policy.evaluate_actions(rows, actions) if rows else None}
     for action in ('continue', 'verify', 'quit'):
         actions = [action] * len(rows)
         policies['always_' + action] = {'actions': actions, 'metrics': independent_metrics(rows, actions)}

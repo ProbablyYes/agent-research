@@ -84,6 +84,8 @@ def validate_plan(path):
     if sha(path) != json.loads(path.with_name('plan.sha256.json').read_text())['sha256']:
         raise ValueError('Plan checksum mismatch')
     check_upstream()
+    if fingerprints() != plan['source_sha256']:
+        raise ValueError('Adapter/upstream source inventory changed after freeze')
     for p, expected in plan['source_sha256'].items():
         if sha(p) != expected:
             raise ValueError('Source changed after freeze: ' + p)
@@ -226,6 +228,13 @@ def execute(plan_path, output, backend, attestation=None):
                     continue
                 test = records['test'] if scope == 'valid_pairs' else [dict(r, valid_pair=True) for r in records['test'] if r['row'] is not None]
                 result = evaluate_frozen(models[scope], controls[scope], test)
+                if scope == 'original_raw':
+                    result['scope'] = 'UNFILTERED AUTHOR REFERENCE ONLY; not valid-pair evidence'
+                    result['denominators'] = {
+                        'attempted_tasks': len(records['test']), 'raw_rows_evaluated': len(test),
+                        'audit_valid': sum(r['valid_pair'] for r in records['test']),
+                        'audit_invalid': sum(not r['valid_pair'] for r in records['test'])}
+                    result['eligible_for_paired_claims'] = False
                 rows = valid_rows(test)
                 if rows:
                     x = policy.feature_matrix(rows)

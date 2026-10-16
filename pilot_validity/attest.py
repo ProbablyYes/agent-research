@@ -26,7 +26,7 @@ def create(plan_path,model_dir,startup_log,server_freeze,output):
     keys=['name','revision','tokenizer_revision','server_seed','vllm','transformers','dtype',
           'max_model_len','gpu_memory_utilization','max_num_seqs','enforce_eager']
     proof={k:model[k] for k in keys}
-    proof.update(model_files={str(p.resolve()):sha(p) for p in paths},
+    proof.update(model_files={str(p.absolute()):sha(p) for p in paths},
                  startup_log={'path':str(startup_log.resolve()),'sha256':sha(startup_log)},
                  server_freeze={'path':str(server_freeze.resolve()),'sha256':sha(server_freeze)},
                  provenance='Operator-declared requested config plus observed file hashes and package freeze; not proof of loaded tensors',
