@@ -1,0 +1,17 @@
+{
+  "commit": "9e3825b7eea89ee9dc88f1ccd11f277f8e10beb3",
+  "status": "",
+  "source_sha256": {
+    ".gitignore": "d822ddec43ba6fd404865d2cfdafabd3c73ab9067d9842a300795ebb5ce7933c",
+    "LICENSE": "3836a735b64dd38060bbc8b6c238842689361ed061d12153fe04c86dbe3da0a9",
+    "README.md": "99e7c40d66a24b5de14b4ad64b114db8dc40b80bc26dc89b64040765a46cad2e",
+    "docs/overview.png": "5ef284abec28e882681ce2f4261b1141eb0636d589d182fd2ac74a8ff724c6c9",
+    "requirements.txt": "8f66d767bb3a4d9adf2f897de473144f402162c5e5518b61346b4404b6fabf3c",
+    "scripts/collect_alfworld_branches.py": "378f97fb9b0e2ce2a6be2a29cfd670cf297adbd401215fe4780fdb8d8e7e87d9",
+    "scripts/evaluate_controllers.py": "c71e7787b0ecc63ab640fd6d7bafe1748a2498d84142c23e3710736f21e242b9",
+    "src/oversight_branching/__init__.py": "de6b645aed994d175799fad889bca486e97846031fb7b3e7567875608a45d7ab",
+    "src/oversight_branching/alfworld_text.py": "670504c3ffac88a6dfee5626ea345c2530b995b79e2f88d047c79ccc845e3cdb",
+    "src/oversight_branching/local_llm.py": "4d4c8011197c682473a7151419f27f0dcee1cac9ab6bf0acb31bfba053d53642",
+    "src/oversight_branching/policy_learning.py": "3f089e34404c16a3ea50f605235ca8cae43033fbbdbc1ebb00c8c2daaaf2e8f7"
+  }
+}

@@ -1,0 +1,23 @@
+# Local environments, datasets, model weights, and upstream checkout
+/.venvs/
+/data/
+/calibration-is-not-control/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+*.pem
+*.key
+*.safetensors
+*.pt
+*.pth
+
+# Downloaded third-party material retained locally
+/reports/evidence/get-pip.py
+/reports/evidence/paper-v2.html
+/reports/evidence/paper-v2.txt
+
+# Future runs must be intentionally selected for version control
+/experiments/*
+!/experiments/cinc_smoke_20261016/

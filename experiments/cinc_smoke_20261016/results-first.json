@@ -1,0 +1,102 @@
+{
+  "syntax": {
+    "status": "PASS",
+    "detail": {
+      "files": 6
+    }
+  },
+  "imports": {
+    "status": "PASS",
+    "detail": {
+      "numpy": {
+        "version": "2.2.6",
+        "file": "/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/numpy/__init__.py"
+      },
+      "sklearn": {
+        "version": "1.7.2",
+        "file": "/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/sklearn/__init__.py"
+      },
+      "alfworld": {
+        "version": "0.4.2",
+        "file": "/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/alfworld/__init__.py"
+      },
+      "textworld": {
+        "version": "1.7.0",
+        "file": "/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/__init__.py"
+      }
+    }
+  },
+  "project_imports": {
+    "status": "PASS",
+    "detail": [
+      "/home/hly/agent-research/calibration-is-not-control/src/oversight_branching/alfworld_text.py",
+      "/home/hly/agent-research/calibration-is-not-control/src/oversight_branching/local_llm.py",
+      "/home/hly/agent-research/calibration-is-not-control/src/oversight_branching/policy_learning.py",
+      "/home/hly/agent-research/calibration-is-not-control/scripts/collect_alfworld_branches.py",
+      "/home/hly/agent-research/calibration-is-not-control/scripts/evaluate_controllers.py"
+    ]
+  },
+  "SYNTHETIC_controllers": {
+    "status": "FAIL",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/hly/agent-research/experiments/cinc_smoke_20261016/smoke.py\", line 9, in check\n    try: results[name]={'status':'PASS','detail':fn()}\n  File \"/home/hly/agent-research/experiments/cinc_smoke_20261016/smoke.py\", line 54, in synthetic\n    assert abs(metrics['utility']+.05)<1e-12 and metrics['success_rate']==.5 and abs(metrics['control_regret']-.535)<1e-12\nAssertionError\n"
+  },
+  "logic_counterexamples": {
+    "status": "PASS",
+    "detail": {
+      "EU_vs_realized": [
+        1.0,
+        0.8
+      ],
+      "failure_constant_score_best": {
+        "verify_threshold": 0.0,
+        "quit_threshold": 0.0,
+        "utility": 0.0,
+        "success_rate": 0.0,
+        "catastrophic_failure_rate": 0.0,
+        "intervention_rate": 1.0,
+        "verify_rate": 0.0,
+        "quit_rate": 1.0,
+        "harmful_intervention_rate": 1.0,
+        "control_regret": 1.0
+      },
+      "cost_sensitive_tuned": {
+        "quit_confidence_threshold": 0.0,
+        "utility": 1.0,
+        "success_rate": 1.0,
+        "catastrophic_failure_rate": 0.0,
+        "intervention_rate": 0.0,
+        "verify_rate": 0.0,
+        "quit_rate": 0.0,
+        "harmful_intervention_rate": 0.0,
+        "control_regret": 0.0
+      },
+      "cost_sensitive_evaluated": {
+        "utility": 0.0,
+        "success_rate": 0.0,
+        "catastrophic_failure_rate": 0.0,
+        "intervention_rate": 1.0,
+        "verify_rate": 0.0,
+        "quit_rate": 1.0,
+        "harmful_intervention_rate": 1.0,
+        "control_regret": 1.0
+      },
+      "note": "cost-sensitive helpers not called by supplied CLIs"
+    }
+  },
+  "ALFWorld_reset_step_replay_expert": {
+    "status": "PASS",
+    "detail": {
+      "eligible_games": {
+        "train": 3553,
+        "valid_seen": 140,
+        "valid_unseen": 134
+      },
+      "reset_step_replay_splits": 3,
+      "expert_wins": [
+        true,
+        true,
+        true
+      ]
+    }
+  }
+}
