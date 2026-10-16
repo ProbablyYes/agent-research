@@ -21,3 +21,5 @@ __pycache__/
 # Future runs must be intentionally selected for version control
 /experiments/*
 !/experiments/cinc_smoke_20261016/
+
+!/experiments/pilot_validity_cpu/
