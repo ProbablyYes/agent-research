@@ -1,0 +1,19 @@
+{
+  "checked_utc": "2026-10-16T03:22:34.381641+00:00",
+  "secret_scan": "PASS; exact credential absent from all tracked and new deliverable files",
+  "scanned_files": 152,
+  "previous_implementation_and_results_unchanged": true,
+  "paid_generation_requests_this_stage": 1,
+  "additional_billing_or_account_requests": 0,
+  "six_task_collection_requests": 0,
+  "source_and_report_sha256": {
+    "api_pilot/__init__.py": "8bb2bba7029c6974cf8f458083eb2afb15f3d8e4b484a7fbc51f820cb7bebc65",
+    "api_pilot/probe.py": "a530130a070f912208a2d388f4de57dd58013be78c033532ae0b395e52566efe",
+    "reports/API_BUDGET_AND_RISKS.md": "c5873770420b0803b4237df9214fac4307931913eb24deebd7146dc368983a2e",
+    "reports/API_COMPATIBILITY_AUDIT.md": "407956cd85816a92a6f676e113bbf682beecd08c4c985968d7887a944427ed21",
+    "reports/API_CONNECTION_TEST.md": "c0390fa7ba6495d3642804a5997b2398014fc835d8351d12b8635199ecc594e5",
+    "reports/API_PILOT_PLAN.md": "c4db576ed2d0f6035e23c9e12f98cc4d79ad6fd7aed5625e024e37b99ee47f5d",
+    "tests/api_pilot/test_plan.py": "6e3841361bbefc5682ac06c0560053002d9badd306c1ae38e4da65d2b9870a4f",
+    "tests/api_pilot/test_probe.py": "6de3ad793c24ca2f0168718c8b871323642735492ecfad9d4861aa4793a147df"
+  }
+}

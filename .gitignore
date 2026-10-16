@@ -23,3 +23,8 @@ __pycache__/
 !/experiments/cinc_smoke_20261016/
 
 !/experiments/pilot_validity_cpu/
+
+# API credentials must live outside the repository; defense in depth
+**/ofox.key
+**/credentials.json
+**/secrets.json

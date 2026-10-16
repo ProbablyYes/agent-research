@@ -1,0 +1,17 @@
+{
+  "local_plan_validation": "PASS",
+  "original_plan_sha256": "3179fa6ce944390a118dc309215acff241d376a721327c4e3f748294be768f61",
+  "draft_sha256": "fe8a7cf2d74ef0fcbdf8caf6bf9487b0e00d8988cebd146ea3779596b6952dc5",
+  "tasks_and_config_identical": true,
+  "credential_file_mode": "0o600",
+  "credential_directory_mode": "0o700",
+  "credential_file_owner_is_current_user": true,
+  "one_attempt_reserved": true,
+  "upstream_commit": "9e3825b7eea89ee9dc88f1ccd11f277f8e10beb3",
+  "upstream_clean": true,
+  "new_code_sha256": {
+    "api_pilot/__init__.py": "8bb2bba7029c6974cf8f458083eb2afb15f3d8e4b484a7fbc51f820cb7bebc65",
+    "api_pilot/probe.py": "a530130a070f912208a2d388f4de57dd58013be78c033532ae0b395e52566efe",
+    "tests/api_pilot/test_probe.py": "6de3ad793c24ca2f0168718c8b871323642735492ecfad9d4861aa4793a147df"
+  }
+}

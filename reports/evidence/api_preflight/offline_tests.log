@@ -1,0 +1,14 @@
+test_bad_json_no_retry (test_probe.ProbeTests) ... ok
+test_missing_usage_not_zero_cost (test_probe.ProbeTests) ... ok
+test_permissions_and_symlink (test_probe.ProbeTests) ... ok
+test_redirect_no_follow (test_probe.ProbeTests) ... ok
+test_reservation_blocks_second_call (test_probe.ProbeTests) ... ok
+test_server_error_no_retry (test_probe.ProbeTests) ... ok
+test_success_and_estimate (test_probe.ProbeTests) ... ok
+test_timeout_no_retry_no_secret (test_probe.ProbeTests) ... ok
+test_unexpected_model_redacted (test_probe.ProbeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.164s
+
+OK

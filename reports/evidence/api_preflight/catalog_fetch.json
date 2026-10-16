@@ -1,0 +1,5 @@
+{
+  "url": "https://api.ofox.ai/v1/models",
+  "authenticated": false,
+  "error_type": "ConnectTimeout"
+}
