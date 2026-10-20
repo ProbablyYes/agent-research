@@ -1,0 +1,22 @@
+{
+  "frozen_before_inventory_and_sampling": true,
+  "seed": 20261020,
+  "benchmark": "Sierra banking_knowledge v1.0.1",
+  "submission": "gpt-5-6-sol_sierra_2026-08-04",
+  "source_etag": "aa82aa9efa074bbc843aaa04ef697d5f-18",
+  "phase1_excluded_task_ids": ["task_002", "task_004", "task_007", "task_012"],
+  "eligibility": "Published nonempty messages, non-null numeric reward, terminal reason other than infrastructure_error. Preserve integrity failures as flags, never silently replace selected records.",
+  "unit": "Independent task ID; choose smallest available trial then source index among eligible runs; one run per task. This privileges earliest completed trial and is a documented bias.",
+  "random_base": "Sort eligible task IDs lexicographically; random.Random(20261020).sample(pool,min(30,len(pool))); do not stratify or replace by outcome or interest.",
+  "targeted": "From remaining independent tasks, apply the following five observable strata in fixed order, up to 4 per stratum. For each take up to 2 reward=1 then up to 2 reward=0, ordered by SHA256(seed|stratum|task_id). No quota backfill and no replacements. At most 20.",
+  "target_strata": [
+    {"id":"execution_change","predicate":"assistant tool name contains transfer OR at least 2 distinct non-information assistant tool names"},
+    {"id":"feedback_error","predicate":"tool error field true/nonempty OR tool content starts Error (case-insensitive), either actor; retain actor attribution"},
+    {"id":"tool_discovery","predicate":"assistant tool name contains unlock_discoverable OR call_discoverable"},
+    {"id":"action_sequence","predicate":"at least 3 non-information assistant tool calls"},
+    {"id":"information_sequence","predicate":"at least 6 assistant tool calls of KB_search*, shell, get_*, list_*, find_*, search_*"}
+  ],
+  "information_proxy": "KB_search*, shell, get_*, list_*, find_*, search_* names; shell may contain writes, so this is only a candidate detector, not true information value.",
+  "interpretation": "Mechanical retrieval cues, not failure taxonomy or causal labels. Targeted outcome balancing is disclosed and never changes the base random sample.",
+  "stop": "No additional task sampling after this single deterministic draw; no paid API, agent execution, training or benchmark modification. Supplement limited to one independently sourced complete trace."
+}
