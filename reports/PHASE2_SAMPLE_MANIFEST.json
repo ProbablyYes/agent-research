@@ -1,0 +1,2056 @@
+{
+  "artifact_base_directory": "/home/hly/agent-research/public_trajectory_research/phase2",
+  "benchmark": "Sierra banking_knowledge v1.0.1",
+  "model": {
+    "implementation": "llm_agent",
+    "llm": "openai/responses/gpt-5.6-sol",
+    "llm_args": {
+      "extra_body": {
+        "reasoning_effort": "xhigh"
+      },
+      "allowed_openai_params": [
+        "tool_choice"
+      ]
+    },
+    "voice_settings": null
+  },
+  "user_model": "gpt-5.2",
+  "runtime_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+  "global_seed": 300,
+  "sampling_plan": {
+    "frozen_before_inventory_and_sampling": true,
+    "seed": 20261020,
+    "benchmark": "Sierra banking_knowledge v1.0.1",
+    "submission": "gpt-5-6-sol_sierra_2026-08-04",
+    "source_etag": "aa82aa9efa074bbc843aaa04ef697d5f-18",
+    "phase1_excluded_task_ids": [
+      "task_002",
+      "task_004",
+      "task_007",
+      "task_012"
+    ],
+    "eligibility": "Published nonempty messages, non-null numeric reward, terminal reason other than infrastructure_error. Preserve integrity failures as flags, never silently replace selected records.",
+    "unit": "Independent task ID; choose smallest available trial then source index among eligible runs; one run per task. This privileges earliest completed trial and is a documented bias.",
+    "random_base": "Sort eligible task IDs lexicographically; random.Random(20261020).sample(pool,min(30,len(pool))); do not stratify or replace by outcome or interest.",
+    "targeted": "From remaining independent tasks, apply the following five observable strata in fixed order, up to 4 per stratum. For each take up to 2 reward=1 then up to 2 reward=0, ordered by SHA256(seed|stratum|task_id). No quota backfill and no replacements. At most 20.",
+    "target_strata": [
+      {
+        "id": "execution_change",
+        "predicate": "assistant tool name contains transfer OR at least 2 distinct non-information assistant tool names"
+      },
+      {
+        "id": "feedback_error",
+        "predicate": "tool error field true/nonempty OR tool content starts Error (case-insensitive), either actor; retain actor attribution"
+      },
+      {
+        "id": "tool_discovery",
+        "predicate": "assistant tool name contains unlock_discoverable OR call_discoverable"
+      },
+      {
+        "id": "action_sequence",
+        "predicate": "at least 3 non-information assistant tool calls"
+      },
+      {
+        "id": "information_sequence",
+        "predicate": "at least 6 assistant tool calls of KB_search*, shell, get_*, list_*, find_*, search_*"
+      }
+    ],
+    "information_proxy": "KB_search*, shell, get_*, list_*, find_*, search_* names; shell may contain writes, so this is only a candidate detector, not true information value.",
+    "interpretation": "Mechanical retrieval cues, not failure taxonomy or causal labels. Targeted outcome balancing is disclosed and never changes the base random sample.",
+    "stop": "No additional task sampling after this single deterministic draw; no paid API, agent execution, training or benchmark modification. Supplement limited to one independently sourced complete trace."
+  },
+  "sampling_plan_sha256": "bcc977681dea4dc83cefb2ec7289750e6200cd19073e68761bcac588a38f6558",
+  "sampling_freeze_commit": "0d01cf6",
+  "source": {
+    "url": "https://sierra-tau-bench-public.s3.amazonaws.com/submissions/gpt-5-6-sol_sierra_2026-08-04/trajectories/banking_knowledge_results.json",
+    "etag": "\"aa82aa9efa074bbc843aaa04ef697d5f-18\"",
+    "http_status": 206,
+    "content_range": "bytes 78643200-150287418/150287419",
+    "preexisting_cache_bytes": 78643200,
+    "new_bytes": 71644219,
+    "total_bundle_bytes": 150287419,
+    "bundle_sha256": "614cdc47ae910fb97936c839e59cf43ec087f9c3c548af395159ea751759c292",
+    "elapsed_seconds": 131.74966859817505,
+    "scope": "Whole transport container for inventory; only selected <=50 simulations exported and indexed; no outcome-driven redraw",
+    "sampling_plan_sha256": "bcc977681dea4dc83cefb2ec7289750e6200cd19073e68761bcac588a38f6558"
+  },
+  "inventory_summary": {
+    "transport_bundle_sha256": "614cdc47ae910fb97936c839e59cf43ec087f9c3c548af395159ea751759c292",
+    "total_simulations": 388,
+    "task_specifications": 97,
+    "distinct_observed_task_ids": 97,
+    "eligible_published_terminal_runs": 347,
+    "eligible_independent_tasks_before_phase1_exclusion": 96,
+    "eligible_independent_tasks_after_phase1_exclusion": 92,
+    "reward_basis_counts": {
+      "DB": 314,
+      "ACTION": 29,
+      "unscored": 41,
+      "DB+NL_ASSERTION": 4
+    },
+    "trial_counts": {
+      "0": 97,
+      "1": 97,
+      "2": 97,
+      "3": 97
+    },
+    "termination_counts": {
+      "user_stop": 347,
+      "infrastructure_error": 41
+    },
+    "reward_counts": {
+      "1.0": 165,
+      "0.0": 182,
+      "None": 41
+    }
+  },
+  "task_representatives": [
+    {
+      "task_id": "task_001",
+      "source_index": 55,
+      "trial": 0
+    },
+    {
+      "task_id": "task_003",
+      "source_index": 4,
+      "trial": 0
+    },
+    {
+      "task_id": "task_005",
+      "source_index": 190,
+      "trial": 2
+    },
+    {
+      "task_id": "task_006",
+      "source_index": 2,
+      "trial": 0
+    },
+    {
+      "task_id": "task_008",
+      "source_index": 200,
+      "trial": 2
+    },
+    {
+      "task_id": "task_010",
+      "source_index": 20,
+      "trial": 0
+    },
+    {
+      "task_id": "task_014",
+      "source_index": 18,
+      "trial": 0
+    },
+    {
+      "task_id": "task_015",
+      "source_index": 123,
+      "trial": 1
+    },
+    {
+      "task_id": "task_016",
+      "source_index": 13,
+      "trial": 0
+    },
+    {
+      "task_id": "task_017",
+      "source_index": 28,
+      "trial": 0
+    },
+    {
+      "task_id": "task_018",
+      "source_index": 137,
+      "trial": 1
+    },
+    {
+      "task_id": "task_019",
+      "source_index": 100,
+      "trial": 1
+    },
+    {
+      "task_id": "task_020",
+      "source_index": 16,
+      "trial": 0
+    },
+    {
+      "task_id": "task_021",
+      "source_index": 10,
+      "trial": 0
+    },
+    {
+      "task_id": "task_022",
+      "source_index": 48,
+      "trial": 0
+    },
+    {
+      "task_id": "task_023",
+      "source_index": 5,
+      "trial": 0
+    },
+    {
+      "task_id": "task_024",
+      "source_index": 12,
+      "trial": 0
+    },
+    {
+      "task_id": "task_025",
+      "source_index": 29,
+      "trial": 0
+    },
+    {
+      "task_id": "task_026",
+      "source_index": 128,
+      "trial": 1
+    },
+    {
+      "task_id": "task_028",
+      "source_index": 65,
+      "trial": 0
+    },
+    {
+      "task_id": "task_029",
+      "source_index": 42,
+      "trial": 0
+    },
+    {
+      "task_id": "task_031",
+      "source_index": 24,
+      "trial": 0
+    },
+    {
+      "task_id": "task_032",
+      "source_index": 3,
+      "trial": 0
+    },
+    {
+      "task_id": "task_033",
+      "source_index": 6,
+      "trial": 0
+    },
+    {
+      "task_id": "task_034",
+      "source_index": 15,
+      "trial": 0
+    },
+    {
+      "task_id": "task_035",
+      "source_index": 215,
+      "trial": 2
+    },
+    {
+      "task_id": "task_036",
+      "source_index": 11,
+      "trial": 0
+    },
+    {
+      "task_id": "task_037",
+      "source_index": 40,
+      "trial": 0
+    },
+    {
+      "task_id": "task_038",
+      "source_index": 14,
+      "trial": 0
+    },
+    {
+      "task_id": "task_039",
+      "source_index": 34,
+      "trial": 0
+    },
+    {
+      "task_id": "task_040",
+      "source_index": 27,
+      "trial": 0
+    },
+    {
+      "task_id": "task_041",
+      "source_index": 43,
+      "trial": 0
+    },
+    {
+      "task_id": "task_043",
+      "source_index": 21,
+      "trial": 0
+    },
+    {
+      "task_id": "task_044",
+      "source_index": 22,
+      "trial": 0
+    },
+    {
+      "task_id": "task_045",
+      "source_index": 26,
+      "trial": 0
+    },
+    {
+      "task_id": "task_046",
+      "source_index": 19,
+      "trial": 0
+    },
+    {
+      "task_id": "task_047",
+      "source_index": 32,
+      "trial": 0
+    },
+    {
+      "task_id": "task_048",
+      "source_index": 44,
+      "trial": 0
+    },
+    {
+      "task_id": "task_049",
+      "source_index": 38,
+      "trial": 0
+    },
+    {
+      "task_id": "task_050",
+      "source_index": 23,
+      "trial": 0
+    },
+    {
+      "task_id": "task_051",
+      "source_index": 33,
+      "trial": 0
+    },
+    {
+      "task_id": "task_052",
+      "source_index": 31,
+      "trial": 0
+    },
+    {
+      "task_id": "task_053",
+      "source_index": 47,
+      "trial": 0
+    },
+    {
+      "task_id": "task_054",
+      "source_index": 35,
+      "trial": 0
+    },
+    {
+      "task_id": "task_055",
+      "source_index": 232,
+      "trial": 1
+    },
+    {
+      "task_id": "task_056",
+      "source_index": 50,
+      "trial": 0
+    },
+    {
+      "task_id": "task_057",
+      "source_index": 120,
+      "trial": 0
+    },
+    {
+      "task_id": "task_058",
+      "source_index": 46,
+      "trial": 0
+    },
+    {
+      "task_id": "task_059",
+      "source_index": 39,
+      "trial": 0
+    },
+    {
+      "task_id": "task_060",
+      "source_index": 37,
+      "trial": 0
+    },
+    {
+      "task_id": "task_061",
+      "source_index": 152,
+      "trial": 1
+    },
+    {
+      "task_id": "task_062",
+      "source_index": 61,
+      "trial": 0
+    },
+    {
+      "task_id": "task_063",
+      "source_index": 71,
+      "trial": 0
+    },
+    {
+      "task_id": "task_064",
+      "source_index": 52,
+      "trial": 0
+    },
+    {
+      "task_id": "task_065",
+      "source_index": 64,
+      "trial": 0
+    },
+    {
+      "task_id": "task_066",
+      "source_index": 53,
+      "trial": 0
+    },
+    {
+      "task_id": "task_067",
+      "source_index": 63,
+      "trial": 0
+    },
+    {
+      "task_id": "task_068",
+      "source_index": 69,
+      "trial": 0
+    },
+    {
+      "task_id": "task_069",
+      "source_index": 138,
+      "trial": 0
+    },
+    {
+      "task_id": "task_070",
+      "source_index": 45,
+      "trial": 0
+    },
+    {
+      "task_id": "task_071",
+      "source_index": 54,
+      "trial": 0
+    },
+    {
+      "task_id": "task_072",
+      "source_index": 58,
+      "trial": 0
+    },
+    {
+      "task_id": "task_073",
+      "source_index": 49,
+      "trial": 0
+    },
+    {
+      "task_id": "task_074",
+      "source_index": 62,
+      "trial": 0
+    },
+    {
+      "task_id": "task_075",
+      "source_index": 57,
+      "trial": 0
+    },
+    {
+      "task_id": "task_076",
+      "source_index": 51,
+      "trial": 0
+    },
+    {
+      "task_id": "task_077",
+      "source_index": 67,
+      "trial": 0
+    },
+    {
+      "task_id": "task_078",
+      "source_index": 81,
+      "trial": 0
+    },
+    {
+      "task_id": "task_079",
+      "source_index": 60,
+      "trial": 0
+    },
+    {
+      "task_id": "task_080",
+      "source_index": 91,
+      "trial": 0
+    },
+    {
+      "task_id": "task_081",
+      "source_index": 59,
+      "trial": 0
+    },
+    {
+      "task_id": "task_082",
+      "source_index": 154,
+      "trial": 0
+    },
+    {
+      "task_id": "task_083",
+      "source_index": 90,
+      "trial": 0
+    },
+    {
+      "task_id": "task_084",
+      "source_index": 73,
+      "trial": 0
+    },
+    {
+      "task_id": "task_085",
+      "source_index": 83,
+      "trial": 0
+    },
+    {
+      "task_id": "task_086",
+      "source_index": 106,
+      "trial": 0
+    },
+    {
+      "task_id": "task_087",
+      "source_index": 70,
+      "trial": 0
+    },
+    {
+      "task_id": "task_088",
+      "source_index": 342,
+      "trial": 2
+    },
+    {
+      "task_id": "task_089",
+      "source_index": 72,
+      "trial": 0
+    },
+    {
+      "task_id": "task_090",
+      "source_index": 85,
+      "trial": 0
+    },
+    {
+      "task_id": "task_091",
+      "source_index": 116,
+      "trial": 0
+    },
+    {
+      "task_id": "task_092",
+      "source_index": 385,
+      "trial": 3
+    },
+    {
+      "task_id": "task_093",
+      "source_index": 66,
+      "trial": 0
+    },
+    {
+      "task_id": "task_094",
+      "source_index": 80,
+      "trial": 0
+    },
+    {
+      "task_id": "task_095",
+      "source_index": 94,
+      "trial": 0
+    },
+    {
+      "task_id": "task_096",
+      "source_index": 87,
+      "trial": 0
+    },
+    {
+      "task_id": "task_097",
+      "source_index": 84,
+      "trial": 0
+    },
+    {
+      "task_id": "task_098",
+      "source_index": 76,
+      "trial": 0
+    },
+    {
+      "task_id": "task_099",
+      "source_index": 74,
+      "trial": 0
+    },
+    {
+      "task_id": "task_100",
+      "source_index": 77,
+      "trial": 0
+    },
+    {
+      "task_id": "task_101",
+      "source_index": 97,
+      "trial": 0
+    },
+    {
+      "task_id": "task_102",
+      "source_index": 103,
+      "trial": 0
+    }
+  ],
+  "stratum_sampling": [
+    {
+      "stratum": "execution_change",
+      "available_task_ids": [
+        "task_005",
+        "task_017",
+        "task_020",
+        "task_021",
+        "task_031",
+        "task_032",
+        "task_033",
+        "task_035",
+        "task_039",
+        "task_040",
+        "task_043",
+        "task_044",
+        "task_046",
+        "task_047",
+        "task_048",
+        "task_049",
+        "task_050",
+        "task_053",
+        "task_054",
+        "task_055",
+        "task_056",
+        "task_057",
+        "task_058",
+        "task_059",
+        "task_060",
+        "task_061",
+        "task_062",
+        "task_064",
+        "task_066",
+        "task_067",
+        "task_068",
+        "task_071",
+        "task_073",
+        "task_075",
+        "task_077",
+        "task_079",
+        "task_080",
+        "task_081",
+        "task_083",
+        "task_084",
+        "task_085",
+        "task_086",
+        "task_087",
+        "task_088",
+        "task_090",
+        "task_091",
+        "task_093",
+        "task_095",
+        "task_096",
+        "task_097",
+        "task_100"
+      ],
+      "selected_task_ids": [
+        "task_005",
+        "task_021",
+        "task_088",
+        "task_066"
+      ],
+      "available_by_reward": {
+        "1.0": 25,
+        "0.0": 26
+      }
+    },
+    {
+      "stratum": "feedback_error",
+      "available_task_ids": [
+        "task_020",
+        "task_024",
+        "task_039",
+        "task_053",
+        "task_055",
+        "task_056",
+        "task_058",
+        "task_059",
+        "task_061",
+        "task_064",
+        "task_067",
+        "task_068",
+        "task_077",
+        "task_097",
+        "task_098"
+      ],
+      "selected_task_ids": [
+        "task_064",
+        "task_056",
+        "task_020",
+        "task_077"
+      ],
+      "available_by_reward": {
+        "0.0": 9,
+        "1.0": 6
+      }
+    },
+    {
+      "stratum": "tool_discovery",
+      "available_task_ids": [
+        "task_031",
+        "task_032",
+        "task_033",
+        "task_035",
+        "task_039",
+        "task_040",
+        "task_043",
+        "task_044",
+        "task_046",
+        "task_047",
+        "task_048",
+        "task_049",
+        "task_050",
+        "task_053",
+        "task_054",
+        "task_055",
+        "task_057",
+        "task_058",
+        "task_059",
+        "task_060",
+        "task_061",
+        "task_062",
+        "task_067",
+        "task_068",
+        "task_071",
+        "task_073",
+        "task_075",
+        "task_079",
+        "task_080",
+        "task_081",
+        "task_083",
+        "task_084",
+        "task_085",
+        "task_086",
+        "task_087",
+        "task_090",
+        "task_091",
+        "task_093",
+        "task_095",
+        "task_096",
+        "task_097",
+        "task_100"
+      ],
+      "selected_task_ids": [
+        "task_032",
+        "task_049",
+        "task_081",
+        "task_085"
+      ],
+      "available_by_reward": {
+        "1.0": 20,
+        "0.0": 22
+      }
+    },
+    {
+      "stratum": "action_sequence",
+      "available_task_ids": [
+        "task_017",
+        "task_031",
+        "task_033",
+        "task_035",
+        "task_039",
+        "task_040",
+        "task_043",
+        "task_044",
+        "task_046",
+        "task_047",
+        "task_048",
+        "task_050",
+        "task_053",
+        "task_054",
+        "task_055",
+        "task_057",
+        "task_058",
+        "task_059",
+        "task_060",
+        "task_061",
+        "task_062",
+        "task_067",
+        "task_068",
+        "task_071",
+        "task_073",
+        "task_075",
+        "task_079",
+        "task_080",
+        "task_083",
+        "task_084",
+        "task_086",
+        "task_087",
+        "task_090",
+        "task_091",
+        "task_093",
+        "task_095",
+        "task_096",
+        "task_097",
+        "task_100"
+      ],
+      "selected_task_ids": [
+        "task_047",
+        "task_096",
+        "task_060",
+        "task_090"
+      ],
+      "available_by_reward": {
+        "1.0": 19,
+        "0.0": 20
+      }
+    },
+    {
+      "stratum": "information_sequence",
+      "available_task_ids": [
+        "task_001",
+        "task_003",
+        "task_006",
+        "task_010",
+        "task_017",
+        "task_023",
+        "task_024",
+        "task_025",
+        "task_031",
+        "task_033",
+        "task_035",
+        "task_039",
+        "task_040",
+        "task_043",
+        "task_044",
+        "task_046",
+        "task_048",
+        "task_050",
+        "task_053",
+        "task_054",
+        "task_055",
+        "task_057",
+        "task_058",
+        "task_059",
+        "task_061",
+        "task_062",
+        "task_063",
+        "task_067",
+        "task_068",
+        "task_071",
+        "task_073",
+        "task_075",
+        "task_079",
+        "task_080",
+        "task_083",
+        "task_084",
+        "task_086",
+        "task_087",
+        "task_091",
+        "task_093",
+        "task_095",
+        "task_097",
+        "task_098",
+        "task_100",
+        "task_102"
+      ],
+      "selected_task_ids": [
+        "task_001",
+        "task_048",
+        "task_083",
+        "task_102"
+      ],
+      "available_by_reward": {
+        "1.0": 23,
+        "0.0": 22
+      }
+    }
+  ],
+  "samples": [
+    {
+      "sample_id": "task_069_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_069",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 138,
+      "source_json_pointer": "/simulations/138",
+      "source_bytes_inclusive": [
+        50470179,
+        51507176
+      ],
+      "sha256": "b5588447dbf30030cee7c15402faf5b674a654b2f3357e157c88d8aff320dcf9",
+      "bytes": 1036998,
+      "event_count": 107,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_069_trial0.json",
+      "readable_file": "readable/task_069_trial0.md"
+    },
+    {
+      "sample_id": "task_094_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_094",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 80,
+      "source_json_pointer": "/simulations/80",
+      "source_bytes_inclusive": [
+        29949358,
+        30149939
+      ],
+      "sha256": "fb0076a3769f48b783444ae9813c7ba5a17ee15092964ab2ac197f2254b042d1",
+      "bytes": 200582,
+      "event_count": 41,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_094_trial0.json",
+      "readable_file": "readable/task_094_trial0.md"
+    },
+    {
+      "sample_id": "task_051_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_051",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 33,
+      "source_json_pointer": "/simulations/33",
+      "source_bytes_inclusive": [
+        10095465,
+        10592254
+      ],
+      "sha256": "163fc2d864c1e7ac2611ea908f494464c8a26300f4753e6188ccfe1f7450990f",
+      "bytes": 496790,
+      "event_count": 78,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_051_trial0.json",
+      "readable_file": "readable/task_051_trial0.md"
+    },
+    {
+      "sample_id": "task_037_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_037",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 40,
+      "source_json_pointer": "/simulations/40",
+      "source_bytes_inclusive": [
+        13354010,
+        13818842
+      ],
+      "sha256": "6f5e5694e64f34c6a3b548f8e708a4abfe89f396514e8c2b903557806075b526",
+      "bytes": 464833,
+      "event_count": 68,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_037_trial0.json",
+      "readable_file": "readable/task_037_trial0.md"
+    },
+    {
+      "sample_id": "task_072_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_072",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 58,
+      "source_json_pointer": "/simulations/58",
+      "source_bytes_inclusive": [
+        20574399,
+        20943738
+      ],
+      "sha256": "01f461b3963c72406e2d33fe8d4b6d6865531ba147f669f9ba7132867d7248b9",
+      "bytes": 369340,
+      "event_count": 48,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_072_trial0.json",
+      "readable_file": "readable/task_072_trial0.md"
+    },
+    {
+      "sample_id": "task_015_trial1",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_015",
+      "trial": 1,
+      "seed": 373753,
+      "source_index": 123,
+      "source_json_pointer": "/simulations/123",
+      "source_bytes_inclusive": [
+        44454488,
+        44627132
+      ],
+      "sha256": "7375b3c3d6287afe1185aaca4077baee24cf64a5b867775383b664ad745106b1",
+      "bytes": 172645,
+      "event_count": 36,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_015_trial1.json",
+      "readable_file": "readable/task_015_trial1.md"
+    },
+    {
+      "sample_id": "task_101_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_101",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 97,
+      "source_json_pointer": "/simulations/97",
+      "source_bytes_inclusive": [
+        35751178,
+        36099367
+      ],
+      "sha256": "a13f19ab5836de163267463021a7923105d98df0f1381f83adcd684c3a6a9b01",
+      "bytes": 348190,
+      "event_count": 48,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_101_trial0.json",
+      "readable_file": "readable/task_101_trial0.md"
+    },
+    {
+      "sample_id": "task_074_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_074",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 62,
+      "source_json_pointer": "/simulations/62",
+      "source_bytes_inclusive": [
+        22330367,
+        22687485
+      ],
+      "sha256": "b5a0cb2107db3dce1bea5275849ae1fdf133bc00a04cbc83d1d52a3f63f23e85",
+      "bytes": 357119,
+      "event_count": 47,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_074_trial0.json",
+      "readable_file": "readable/task_074_trial0.md"
+    },
+    {
+      "sample_id": "task_018_trial1",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_018",
+      "trial": 1,
+      "seed": 373753,
+      "source_index": 137,
+      "source_json_pointer": "/simulations/137",
+      "source_bytes_inclusive": [
+        50034275,
+        50470172
+      ],
+      "sha256": "e37b71416592e2f051b760eb6d7ffd809acc3c6d6788f7e33d466f85eb30df85",
+      "bytes": 435898,
+      "event_count": 61,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_018_trial1.json",
+      "readable_file": "readable/task_018_trial1.md"
+    },
+    {
+      "sample_id": "task_026_trial1",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_026",
+      "trial": 1,
+      "seed": 373753,
+      "source_index": 128,
+      "source_json_pointer": "/simulations/128",
+      "source_bytes_inclusive": [
+        46539952,
+        47088404
+      ],
+      "sha256": "9eaa5fa31d8601b3895fb2fa5b0ed1ef083eaa20e03311139a794a09f62a6730",
+      "bytes": 548453,
+      "event_count": 108,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_026_trial1.json",
+      "readable_file": "readable/task_026_trial1.md"
+    },
+    {
+      "sample_id": "task_008_trial2",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_008",
+      "trial": 2,
+      "seed": 361454,
+      "source_index": 200,
+      "source_json_pointer": "/simulations/200",
+      "source_bytes_inclusive": [
+        75114166,
+        75576264
+      ],
+      "sha256": "b2e27463502a22c789a308946fcdafee9d9605bc7e1adff90ca061e5d7d69485",
+      "bytes": 462099,
+      "event_count": 55,
+      "reward": 0.0,
+      "reward_basis": [
+        "ACTION"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_008_trial2.json",
+      "readable_file": "readable/task_008_trial2.md"
+    },
+    {
+      "sample_id": "task_052_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_052",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 31,
+      "source_json_pointer": "/simulations/31",
+      "source_bytes_inclusive": [
+        9009967,
+        9512771
+      ],
+      "sha256": "2103774f176047d768febccc7c39c4299f97164118dee02607fe3c85c7d4132a",
+      "bytes": 502805,
+      "event_count": 74,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_052_trial0.json",
+      "readable_file": "readable/task_052_trial0.md"
+    },
+    {
+      "sample_id": "task_076_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_076",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 51,
+      "source_json_pointer": "/simulations/51",
+      "source_bytes_inclusive": [
+        18278053,
+        18568131
+      ],
+      "sha256": "eb17c975117e2cfe6f14c0488c02b2ed9915d692b0125ff1fbb40eb83194ed5b",
+      "bytes": 290079,
+      "event_count": 32,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_076_trial0.json",
+      "readable_file": "readable/task_076_trial0.md"
+    },
+    {
+      "sample_id": "task_036_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_036",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 11,
+      "source_json_pointer": "/simulations/11",
+      "source_bytes_inclusive": [
+        3279485,
+        3532442
+      ],
+      "sha256": "b5924a3bc367b906530e8fc41d205e08ec9a4ade7cea1436f7c7a4dc3129cd60",
+      "bytes": 252958,
+      "event_count": 40,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_036_trial0.json",
+      "readable_file": "readable/task_036_trial0.md"
+    },
+    {
+      "sample_id": "task_016_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_016",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 13,
+      "source_json_pointer": "/simulations/13",
+      "source_bytes_inclusive": [
+        3863584,
+        4205405
+      ],
+      "sha256": "c77344cc8afd3e8840826463ed7d2c5bf44e26aea0e133129b4d3c18fa35b334",
+      "bytes": 341822,
+      "event_count": 42,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_016_trial0.json",
+      "readable_file": "readable/task_016_trial0.md"
+    },
+    {
+      "sample_id": "task_041_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_041",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 43,
+      "source_json_pointer": "/simulations/43",
+      "source_bytes_inclusive": [
+        14362848,
+        14660742
+      ],
+      "sha256": "31ccdc7d75a763ab6e523ca32b4c24df97c578b57daaa06d964e7e2a3ef5f917",
+      "bytes": 297895,
+      "event_count": 74,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_041_trial0.json",
+      "readable_file": "readable/task_041_trial0.md"
+    },
+    {
+      "sample_id": "task_065_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_065",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 64,
+      "source_json_pointer": "/simulations/64",
+      "source_bytes_inclusive": [
+        23388058,
+        23960533
+      ],
+      "sha256": "d417a454efe67c48954e3b04f27fb043f3e5148c27665e4e051849a753249dcb",
+      "bytes": 572476,
+      "event_count": 67,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_065_trial0.json",
+      "readable_file": "readable/task_065_trial0.md"
+    },
+    {
+      "sample_id": "task_019_trial1",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_019",
+      "trial": 1,
+      "seed": 373753,
+      "source_index": 100,
+      "source_json_pointer": "/simulations/100",
+      "source_bytes_inclusive": [
+        36423037,
+        36651847
+      ],
+      "sha256": "2b93cd29f3db947e0e729d90c878b6689fa713b86feaedcfd4bde0a568b2a567",
+      "bytes": 228811,
+      "event_count": 30,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_019_trial1.json",
+      "readable_file": "readable/task_019_trial1.md"
+    },
+    {
+      "sample_id": "task_082_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_082",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 154,
+      "source_json_pointer": "/simulations/154",
+      "source_bytes_inclusive": [
+        56867308,
+        57530694
+      ],
+      "sha256": "a8c219d3e4900664d97d573b70ec733b290722fbfe0c2b12a7f6a01c1980d540",
+      "bytes": 663387,
+      "event_count": 73,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_082_trial0.json",
+      "readable_file": "readable/task_082_trial0.md"
+    },
+    {
+      "sample_id": "task_038_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_038",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 14,
+      "source_json_pointer": "/simulations/14",
+      "source_bytes_inclusive": [
+        4205412,
+        4501462
+      ],
+      "sha256": "d44e67f34207d76e631bae89f1241d5acb56bbdda4410d9464dc234cb26fb466",
+      "bytes": 296051,
+      "event_count": 47,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_038_trial0.json",
+      "readable_file": "readable/task_038_trial0.md"
+    },
+    {
+      "sample_id": "task_078_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_078",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 81,
+      "source_json_pointer": "/simulations/81",
+      "source_bytes_inclusive": [
+        30149946,
+        30760785
+      ],
+      "sha256": "456e4142ebe18348c7bc09cdd710e8ed901ba1a1d37fbc165336e7cf85015e10",
+      "bytes": 610840,
+      "event_count": 78,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_078_trial0.json",
+      "readable_file": "readable/task_078_trial0.md"
+    },
+    {
+      "sample_id": "task_099_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_099",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 74,
+      "source_json_pointer": "/simulations/74",
+      "source_bytes_inclusive": [
+        28400889,
+        28720876
+      ],
+      "sha256": "ce49d10a00555a5220c35a8914e008d2931747077ab2b58fa33579c12cefe2e7",
+      "bytes": 319988,
+      "event_count": 33,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_099_trial0.json",
+      "readable_file": "readable/task_099_trial0.md"
+    },
+    {
+      "sample_id": "task_028_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_028",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 65,
+      "source_json_pointer": "/simulations/65",
+      "source_bytes_inclusive": [
+        23960540,
+        24522201
+      ],
+      "sha256": "68e88c456dd4c39d769e40c7c4c2c313081a14ae1bf0e92e761785645fa02467",
+      "bytes": 561662,
+      "event_count": 111,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_028_trial0.json",
+      "readable_file": "readable/task_028_trial0.md"
+    },
+    {
+      "sample_id": "task_014_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_014",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 18,
+      "source_json_pointer": "/simulations/18",
+      "source_bytes_inclusive": [
+        4894487,
+        5162079
+      ],
+      "sha256": "483b018d3a6764d0414e932a0c89a1de3cf3003d1d75583ea75c3cdd4ff54f71",
+      "bytes": 267593,
+      "event_count": 32,
+      "reward": 0.0,
+      "reward_basis": [
+        "ACTION"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_014_trial0.json",
+      "readable_file": "readable/task_014_trial0.md"
+    },
+    {
+      "sample_id": "task_092_trial3",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_092",
+      "trial": 3,
+      "seed": 1567,
+      "source_index": 385,
+      "source_json_pointer": "/simulations/385",
+      "source_bytes_inclusive": [
+        148331434,
+        148658448
+      ],
+      "sha256": "ffc4d797306195ab6c9fa798bf4df94e734ee9f4cfa298829effd659d710dcd8",
+      "bytes": 327015,
+      "event_count": 48,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_092_trial3.json",
+      "readable_file": "readable/task_092_trial3.md"
+    },
+    {
+      "sample_id": "task_029_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_029",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 42,
+      "source_json_pointer": "/simulations/42",
+      "source_bytes_inclusive": [
+        13821089,
+        14362841
+      ],
+      "sha256": "677015866b85fced3d01c1c8817b92fd4c01cc1379c2c0fcdfb78d42e9d111a0",
+      "bytes": 541753,
+      "event_count": 81,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_029_trial0.json",
+      "readable_file": "readable/task_029_trial0.md"
+    },
+    {
+      "sample_id": "task_022_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_022",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 48,
+      "source_json_pointer": "/simulations/48",
+      "source_bytes_inclusive": [
+        16613842,
+        17157781
+      ],
+      "sha256": "cef169527ba2a52f10744b4e9c79fd2411c8ef0061cb5710265ce01b07a3479c",
+      "bytes": 543940,
+      "event_count": 98,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_022_trial0.json",
+      "readable_file": "readable/task_022_trial0.md"
+    },
+    {
+      "sample_id": "task_045_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_045",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 26,
+      "source_json_pointer": "/simulations/26",
+      "source_bytes_inclusive": [
+        7494630,
+        8042319
+      ],
+      "sha256": "8443e54f23116a9731f2252441eb3e40b5636b8de58fd7c6b2905733babe2a9d",
+      "bytes": 547690,
+      "event_count": 77,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_045_trial0.json",
+      "readable_file": "readable/task_045_trial0.md"
+    },
+    {
+      "sample_id": "task_070_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_070",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 45,
+      "source_json_pointer": "/simulations/45",
+      "source_bytes_inclusive": [
+        15357648,
+        15730457
+      ],
+      "sha256": "6ecb85e576574903d338449cd2e0339c8253e7dd610468a144a9a54b01a9b2c7",
+      "bytes": 372810,
+      "event_count": 41,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_070_trial0.json",
+      "readable_file": "readable/task_070_trial0.md"
+    },
+    {
+      "sample_id": "task_089_trial0",
+      "group": "random_base",
+      "target_stratum": null,
+      "task_id": "task_089",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 72,
+      "source_json_pointer": "/simulations/72",
+      "source_bytes_inclusive": [
+        27465059,
+        27950357
+      ],
+      "sha256": "327cdb457364f5e7ebb52c3f6f62b4b5bf5225b2110e0fd351480a94dbf96ad6",
+      "bytes": 485299,
+      "event_count": 56,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_089_trial0.json",
+      "readable_file": "readable/task_089_trial0.md"
+    },
+    {
+      "sample_id": "task_005_trial2",
+      "group": "targeted",
+      "target_stratum": "execution_change",
+      "task_id": "task_005",
+      "trial": 2,
+      "seed": 361454,
+      "source_index": 190,
+      "source_json_pointer": "/simulations/190",
+      "source_bytes_inclusive": [
+        72238011,
+        72422982
+      ],
+      "sha256": "0211f2ff28b698f5e8e698fe1b0001b3fcf8fdd49c8a95119acde9f0b531ed37",
+      "bytes": 184972,
+      "event_count": 34,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_005_trial2.json",
+      "readable_file": "readable/task_005_trial2.md"
+    },
+    {
+      "sample_id": "task_021_trial0",
+      "group": "targeted",
+      "target_stratum": "execution_change",
+      "task_id": "task_021",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 10,
+      "source_json_pointer": "/simulations/10",
+      "source_bytes_inclusive": [
+        3001205,
+        3279478
+      ],
+      "sha256": "8b9f4647f9dd5c72fe45f84c564e166f83c2aa7928f4ff44e1caa6698ce12563",
+      "bytes": 278274,
+      "event_count": 46,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_021_trial0.json",
+      "readable_file": "readable/task_021_trial0.md"
+    },
+    {
+      "sample_id": "task_088_trial2",
+      "group": "targeted",
+      "target_stratum": "execution_change",
+      "task_id": "task_088",
+      "trial": 2,
+      "seed": 361454,
+      "source_index": 342,
+      "source_json_pointer": "/simulations/342",
+      "source_bytes_inclusive": [
+        128818762,
+        129229029
+      ],
+      "sha256": "423220d8bea8e7c8f79077066e2581eb3b1651e5a47cf09095d4a214584fd577",
+      "bytes": 410268,
+      "event_count": 65,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_088_trial2.json",
+      "readable_file": "readable/task_088_trial2.md"
+    },
+    {
+      "sample_id": "task_066_trial0",
+      "group": "targeted",
+      "target_stratum": "execution_change",
+      "task_id": "task_066",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 53,
+      "source_json_pointer": "/simulations/53",
+      "source_bytes_inclusive": [
+        19246696,
+        19667454
+      ],
+      "sha256": "2ce779b6fe364d1bd5716981f04e1489dfceaaf14bfca63ccd181e66ebe0804f",
+      "bytes": 420759,
+      "event_count": 62,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_066_trial0.json",
+      "readable_file": "readable/task_066_trial0.md"
+    },
+    {
+      "sample_id": "task_064_trial0",
+      "group": "targeted",
+      "target_stratum": "feedback_error",
+      "task_id": "task_064",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 52,
+      "source_json_pointer": "/simulations/52",
+      "source_bytes_inclusive": [
+        18568138,
+        19246689
+      ],
+      "sha256": "6d229a88cd3d21d37845470d9e5ec369d8f8d21c1bcf10eb523802cd25d10a2b",
+      "bytes": 678552,
+      "event_count": 60,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_064_trial0.json",
+      "readable_file": "readable/task_064_trial0.md"
+    },
+    {
+      "sample_id": "task_056_trial0",
+      "group": "targeted",
+      "target_stratum": "feedback_error",
+      "task_id": "task_056",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 50,
+      "source_json_pointer": "/simulations/50",
+      "source_bytes_inclusive": [
+        17457648,
+        18278046
+      ],
+      "sha256": "1bc0a396e421112ad53eac22282323a18ad0345f8ffed296aab1d68ae388047c",
+      "bytes": 820399,
+      "event_count": 90,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_056_trial0.json",
+      "readable_file": "readable/task_056_trial0.md"
+    },
+    {
+      "sample_id": "task_020_trial0",
+      "group": "targeted",
+      "target_stratum": "feedback_error",
+      "task_id": "task_020",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 16,
+      "source_json_pointer": "/simulations/16",
+      "source_bytes_inclusive": [
+        4625361,
+        4892240
+      ],
+      "sha256": "e17a90dce4aeba2d8f51264994ff5206c817ef725eda2a6f4b8a42802b915555",
+      "bytes": 266880,
+      "event_count": 50,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_020_trial0.json",
+      "readable_file": "readable/task_020_trial0.md"
+    },
+    {
+      "sample_id": "task_077_trial0",
+      "group": "targeted",
+      "target_stratum": "feedback_error",
+      "task_id": "task_077",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 67,
+      "source_json_pointer": "/simulations/67",
+      "source_bytes_inclusive": [
+        24907991,
+        25562314
+      ],
+      "sha256": "dd5c7fa7cfb81bc834c0ed069d4e6a3461377974e4c7b4bc0b81eca9ee9e0ed9",
+      "bytes": 654324,
+      "event_count": 102,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_077_trial0.json",
+      "readable_file": "readable/task_077_trial0.md"
+    },
+    {
+      "sample_id": "task_032_trial0",
+      "group": "targeted",
+      "target_stratum": "tool_discovery",
+      "task_id": "task_032",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 3,
+      "source_json_pointer": "/simulations/3",
+      "source_bytes_inclusive": [
+        1638003,
+        1738377
+      ],
+      "sha256": "26df35e03ff30744683a2d131680b29d9d3cee2c760172f7153e2aed9ae21870",
+      "bytes": 100375,
+      "event_count": 25,
+      "reward": 1.0,
+      "reward_basis": [
+        "ACTION"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_032_trial0.json",
+      "readable_file": "readable/task_032_trial0.md"
+    },
+    {
+      "sample_id": "task_049_trial0",
+      "group": "targeted",
+      "target_stratum": "tool_discovery",
+      "task_id": "task_049",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 38,
+      "source_json_pointer": "/simulations/38",
+      "source_bytes_inclusive": [
+        12123670,
+        12844413
+      ],
+      "sha256": "bec4ea40be4b65f6f6df11043a9eaf41db1b8aadedca15e863ba14cd3a971f76",
+      "bytes": 720744,
+      "event_count": 120,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_049_trial0.json",
+      "readable_file": "readable/task_049_trial0.md"
+    },
+    {
+      "sample_id": "task_081_trial0",
+      "group": "targeted",
+      "target_stratum": "tool_discovery",
+      "task_id": "task_081",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 59,
+      "source_json_pointer": "/simulations/59",
+      "source_bytes_inclusive": [
+        20943745,
+        21422481
+      ],
+      "sha256": "acf5623fe00ec2ad86eb756db6e014d0ef8a871f44acc680979fa04bbf190522",
+      "bytes": 478737,
+      "event_count": 57,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_081_trial0.json",
+      "readable_file": "readable/task_081_trial0.md"
+    },
+    {
+      "sample_id": "task_085_trial0",
+      "group": "targeted",
+      "target_stratum": "tool_discovery",
+      "task_id": "task_085",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 83,
+      "source_json_pointer": "/simulations/83",
+      "source_bytes_inclusive": [
+        30946844,
+        31555342
+      ],
+      "sha256": "972c95202e0ea3f538515bcd516b5551587c2d1bd692f90202c3fbb375a3a736",
+      "bytes": 608499,
+      "event_count": 85,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_085_trial0.json",
+      "readable_file": "readable/task_085_trial0.md"
+    },
+    {
+      "sample_id": "task_047_trial0",
+      "group": "targeted",
+      "target_stratum": "action_sequence",
+      "task_id": "task_047",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 32,
+      "source_json_pointer": "/simulations/32",
+      "source_bytes_inclusive": [
+        9512778,
+        10095458
+      ],
+      "sha256": "354ff65a5ddbd3dffef49e49d2b4c3ac67308613f5aca7fd84c514cb01e9ca8f",
+      "bytes": 582681,
+      "event_count": 87,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_047_trial0.json",
+      "readable_file": "readable/task_047_trial0.md"
+    },
+    {
+      "sample_id": "task_096_trial0",
+      "group": "targeted",
+      "target_stratum": "action_sequence",
+      "task_id": "task_096",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 87,
+      "source_json_pointer": "/simulations/87",
+      "source_bytes_inclusive": [
+        32573575,
+        32863131
+      ],
+      "sha256": "780db563b4855f62713a724a039b6f5dc80058197ce1e1442155f18177344e72",
+      "bytes": 289557,
+      "event_count": 48,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_096_trial0.json",
+      "readable_file": "readable/task_096_trial0.md"
+    },
+    {
+      "sample_id": "task_060_trial0",
+      "group": "targeted",
+      "target_stratum": "action_sequence",
+      "task_id": "task_060",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 37,
+      "source_json_pointer": "/simulations/37",
+      "source_bytes_inclusive": [
+        11608097,
+        12123663
+      ],
+      "sha256": "0b127f3fe89bc33e1e18ef70058db577ea2cd3ddb3ae8c0fe1f0c6d9f2b1aa2c",
+      "bytes": 515567,
+      "event_count": 60,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_060_trial0.json",
+      "readable_file": "readable/task_060_trial0.md"
+    },
+    {
+      "sample_id": "task_090_trial0",
+      "group": "targeted",
+      "target_stratum": "action_sequence",
+      "task_id": "task_090",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 85,
+      "source_json_pointer": "/simulations/85",
+      "source_bytes_inclusive": [
+        32031749,
+        32357004
+      ],
+      "sha256": "79ec8861c80283489e6392023c51fd8ae54314c0b1070f7c8380775757c170de",
+      "bytes": 325256,
+      "event_count": 52,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_090_trial0.json",
+      "readable_file": "readable/task_090_trial0.md"
+    },
+    {
+      "sample_id": "task_001_trial0",
+      "group": "targeted",
+      "target_stratum": "information_sequence",
+      "task_id": "task_001",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 55,
+      "source_json_pointer": "/simulations/55",
+      "source_bytes_inclusive": [
+        20049565,
+        20235825
+      ],
+      "sha256": "e5d3ee862013786f7b2e892111f97fb621182b73a7c6c1a3aa92280f7ca53a49",
+      "bytes": 186261,
+      "event_count": 21,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_001_trial0.json",
+      "readable_file": "readable/task_001_trial0.md"
+    },
+    {
+      "sample_id": "task_048_trial0",
+      "group": "targeted",
+      "target_stratum": "information_sequence",
+      "task_id": "task_048",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 44,
+      "source_json_pointer": "/simulations/44",
+      "source_bytes_inclusive": [
+        14660749,
+        15357641
+      ],
+      "sha256": "66d22ace96f9ca2c4b045c9a4c331d26f34e0bc8f11fd6a83e8981172cd8930c",
+      "bytes": 696893,
+      "event_count": 114,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_048_trial0.json",
+      "readable_file": "readable/task_048_trial0.md"
+    },
+    {
+      "sample_id": "task_083_trial0",
+      "group": "targeted",
+      "target_stratum": "information_sequence",
+      "task_id": "task_083",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 90,
+      "source_json_pointer": "/simulations/90",
+      "source_bytes_inclusive": [
+        33306755,
+        33889740
+      ],
+      "sha256": "86715c45b4ebe7dabf981fea5a6c45475b07ee34236fabe2e12a0f7c1a3d6a16",
+      "bytes": 582986,
+      "event_count": 72,
+      "reward": 0.0,
+      "reward_basis": [
+        "ACTION"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_083_trial0.json",
+      "readable_file": "readable/task_083_trial0.md"
+    },
+    {
+      "sample_id": "task_102_trial0",
+      "group": "targeted",
+      "target_stratum": "information_sequence",
+      "task_id": "task_102",
+      "trial": 0,
+      "seed": 626729,
+      "source_index": 103,
+      "source_json_pointer": "/simulations/103",
+      "source_bytes_inclusive": [
+        37440062,
+        37789394
+      ],
+      "sha256": "2a6251ff83b1579aeccde853b84c6e7b471c2a31cabaf7fafd448d8775d80f45",
+      "bytes": 349333,
+      "event_count": 43,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB",
+        "NL_ASSERTION"
+      ],
+      "integrity_issues": [],
+      "raw_file": "raw/task_102_trial0.json",
+      "readable_file": "readable/task_102_trial0.md"
+    }
+  ],
+  "license": "Source repository MIT; independent S3 redistribution license unverified; raw and readable retained locally",
+  "base_outcomes": {
+    "0.0": 17,
+    "1.0": 13
+  },
+  "target_outcomes": {
+    "1.0": 10,
+    "0.0": 10
+  },
+  "limitations": [
+    "Historical snapshot only; no causal alternatives",
+    "Earliest eligible trial bias",
+    "Mechanical candidate cues are not true root-cause or information-value labels",
+    "Full transport fetched for inventory; only selected records exported as research samples"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "samples": 50,
+  "random_base": 30,
+  "targeted": 20,
+  "messages": 3124,
+  "agent_tool_calls": 1544,
+  "user_tool_calls": 60,
+  "whole_bundle_terminal_tool_link_issues": [],
+  "phase1_sample_hashes_unchanged": true,
+  "checks": [
+    "frozen_plan_sha256",
+    "whole_bundle_sha256",
+    "independent_random_draw_reproduction",
+    "independent_targeted_draw_reproduction",
+    "visible_private_prefix_separation",
+    "unique_tasks_and_phase1_exclusion",
+    "exact_source_bytes_per_sample",
+    "sha256_per_sample",
+    "complete_render_roundtrip",
+    "CSV_event_counts",
+    "actor_attribution",
+    "published_reward_breakdown_consistency_not_reexecution",
+    "candidate_event_bounds",
+    "whole_bundle_tool_link_inventory"
+  ]
+}

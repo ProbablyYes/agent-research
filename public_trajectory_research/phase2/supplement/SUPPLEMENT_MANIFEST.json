@@ -1,0 +1,47 @@
+{
+  "selected_supplement": "SWE-smith generated repository-repair tasks, official SWE-bench/SWE-smith-trajectories release",
+  "source_url": "https://datasets-server.huggingface.co/rows?dataset=SWE-bench/SWE-smith-trajectories&config=default&split=tool&offset=0&length=1",
+  "dataset_revision_before_and_after": "08e109b4a59eaeebf80e4675cd125d42e7ac99a4",
+  "row_index": 0,
+  "split": "tool",
+  "license_declared": "MIT",
+  "instance_id": "django-money__django-money.835c1ab8.func_pm_ctrl_shuffle__viqnyl9u",
+  "traj_id": "django-money__django-money.835c1ab8.func_pm_ctrl_shuffle__viqnyl9u.8qa84d2e",
+  "model": "claude-3-7-sonnet-20250219",
+  "resolved": true,
+  "message_count": 49,
+  "truncated_cells": [],
+  "raw_response_sha256": "3a9355f21a9d58b7bbd9dceb5c58d6e0d9423d9d9ded3bce7c170e42524f5f15",
+  "sample_sha256": "e66718966b7b278d6122990779ca7c03e781d8eeea3338ef24a2fce9acf5a20a",
+  "response_bytes": 75628,
+  "published_model_calls": 24,
+  "published_tool_returns": 23,
+  "limitations": [
+    "Processed public messages, not raw provider transport",
+    "Viewer endpoint is mutable; revision checked before and after and bytes hashed, no claim of immutable endpoint",
+    "Final submit has no subsequent tool return; terminal action convention retained",
+    "patch field empty; code edits are in messages, independent final patch not verified",
+    "No timestamps/token/cost fields in this row",
+    "Older Claude 3.7 model; generated bug task not newer frontier natural issue",
+    "Dataset README 5017 prose differs from tool split 24100 metadata; do not infer population from prose"
+  ],
+  "rejected_candidates": [
+    {
+      "source": "tbench.ai legacy leaderboard route",
+      "reason": "Redirects to new homepage; old scraper paths not verified"
+    },
+    {
+      "source": "yoonholee/terminalbench-trajectories row0",
+      "reason": "steps=null"
+    },
+    {
+      "source": "same dataset row10000",
+      "reason": "23 steps but unresolved system $31 reference; not accepted as complete"
+    },
+    {
+      "source": "Jiacheng-Zhu-AIML release v0.1 train-fasttext Opus4.6",
+      "reason": "61 ATIF steps contain unresolved $31 task and $6c tool observations; rejected as complete",
+      "archive_sha256": "7051811525fd3fc8aaba48027a282e052b983c1f7799cd224ba23758f9896daa"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PASS_with_published_format_limits",
+  "messages": 49,
+  "tool_calls": 24,
+  "tool_returns": 23,
+  "unreturned_terminal_action": {
+    "event": 49,
+    "name": "submit"
+  },
+  "render_roundtrip": true,
+  "response_sha256": "3a9355f21a9d58b7bbd9dceb5c58d6e0d9423d9d9ded3bce7c170e42524f5f15",
+  "not_provider_raw_log": true,
+  "no_environment_reexecution": true
+}

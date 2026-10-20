@@ -1,0 +1,13 @@
+{
+  "url": "https://sierra-tau-bench-public.s3.amazonaws.com/submissions/gpt-5-6-sol_sierra_2026-08-04/trajectories/banking_knowledge_results.json",
+  "etag": "\"aa82aa9efa074bbc843aaa04ef697d5f-18\"",
+  "http_status": 206,
+  "content_range": "bytes 78643200-150287418/150287419",
+  "preexisting_cache_bytes": 78643200,
+  "new_bytes": 71644219,
+  "total_bundle_bytes": 150287419,
+  "bundle_sha256": "614cdc47ae910fb97936c839e59cf43ec087f9c3c548af395159ea751759c292",
+  "elapsed_seconds": 131.74966859817505,
+  "scope": "Whole transport container for inventory; only selected <=50 simulations exported and indexed; no outcome-driven redraw",
+  "sampling_plan_sha256": "bcc977681dea4dc83cefb2ec7289750e6200cd19073e68761bcac588a38f6558"
+}

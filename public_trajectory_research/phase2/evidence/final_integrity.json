@@ -1,0 +1,14 @@
+{
+  "sampling_freeze_commit": "0d01cf6629f4d7d2dcb85982e864c7cb28daeec6",
+  "phase1_base_commit": "0a16683",
+  "scripts": {
+    "build.py": "f9e6ce75249f2ee1532a29015dcb714c32523300935be142fb6462e0e2511222",
+    "reports.py": "db6ef696d19d8f3bc97411e66e3b7e0f9984614629b8896182af4fffbe47e903",
+    "verify.py": "21404d9f3884269878de3b61f3b5ca7266956ebe3bac9a2c87fd9f9002f4582a",
+    "verify_supplement.py": "6b10e27ae89de5b25e0523ab4a4d9ce6b4a81b02e1fe3872b7c9f2a839c65fc7"
+  },
+  "verification_status": "PASS",
+  "phase1_tracked_diff": "",
+  "upstream_head": "9e3825b7eea89ee9dc88f1ccd11f277f8e10beb3",
+  "upstream_status": ""
+}

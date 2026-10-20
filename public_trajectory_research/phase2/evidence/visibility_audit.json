@@ -1,0 +1,18 @@
+{
+  "kind": "static_source_audit_not_provider_prompt_reconstruction",
+  "runtime_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+  "sources": [
+    {
+      "file": "source_agent_llm_agent.py",
+      "url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/fc0055dc4e0a316c3f83133267fbd6faaa770992/src/tau2/agent/llm_agent.py",
+      "sha256": "d13412ff502859f0ef0492af0128f1b2666be32640057ba8e076d2602af084d8"
+    },
+    {
+      "file": "source_orchestrator_orchestrator.py",
+      "url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/fc0055dc4e0a316c3f83133267fbd6faaa770992/src/tau2/orchestrator/orchestrator.py",
+      "sha256": "6c689e5d1037dd08aef8834b46f58efa14359824cbebf7084de0172e5f580cba"
+    }
+  ],
+  "finding": "Orchestrator.step routes tool responses to the requesting role; user-side tool interactions are not directly fed to the evaluated agent. LLMAgent builds its messages from received inputs and its own previous outputs. Published get_trajectory sorts by timestamp; we preserve that published array without further reordering.",
+  "limits": "Private raw_data reasoning excluded. Terminal stop may not be delivered. Exact provider serialization and harness state not reconstructed."
+}

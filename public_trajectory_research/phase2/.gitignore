@@ -1,0 +1,8 @@
+# Third-party full histories and transport containers remain local.
+raw/
+readable/
+supplement/*
+!supplement/SUPPLEMENT_MANIFEST.json
+!supplement/verification.json
+# Third-party pinned source copies used only for static visibility audit.
+evidence/source_*.py
