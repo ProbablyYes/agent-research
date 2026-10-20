@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-20T02:05:32.224661+00:00",
+  "url": "https://api.ofox.ai/v1/models",
+  "authentication_sent": false,
+  "redirects": false,
+  "key_exists": true,
+  "key_mode": "0o600",
+  "status": 200
+}

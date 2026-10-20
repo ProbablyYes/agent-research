@@ -1,0 +1,16 @@
+{
+  "review_date": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "evidence_kind": "Public documentation review, not authenticated account settings or settled invoice",
+  "sources": [
+    {"url":"https://ofox.ai/docs/develop/observability/pricing", "finding":"Text input/output are priced per token; cache hits are discounted; usage includes prompt_tokens, completion_tokens, total_tokens. This supports nominal arithmetic, not effective account routing."},
+    {"url":"https://ofox.ai/enterprise", "finding":"Provider states model-card prices, no platform fee and failed requests not charged. This narrows billing uncertainty, but does not prove the active account routing policy."},
+    {"url":"https://ofox.ai/docs/develop/observability/dashboard", "finding":"Console supports global default routing and fallback models. Current account configuration was not observed."},
+    {"url":"https://ofox.ai/docs/develop/advanced/fallback", "finding":"Documents backup-model arrays. No verified evidence in this review establishes empty-array precedence over current account global defaults."},
+    {"url":"https://ofox.ai/docs/changelog", "finding":"Budget control entry describes caps and also a 110 percent warning/buffer. This is not proof of a strict 3 USD cap for this key."},
+    {"url":"https://ofox.ai/docs/api/openai/chat-completions", "finding":"Chat endpoint with model, messages, max_tokens, temperature and usage response. Current catalog also lists support. No new live generation test was made."}
+  ],
+  "confirmed": ["2026-10-20 public catalog HTTP 200 without authentication", "model ID openai/gpt-4o-mini", "128000 context", "input USD 0.15 per million", "output USD 0.60 per million"],
+  "not_confirmed": ["effective account fallback disabled", "one request charged only at requested model's capped rate under all outcomes", "strict account-side cap and buffer semantics"],
+  "decision": "STOP_BEFORE_GENERATION under user stage A item 8; do not infer a reliable bill ceiling solely from model metadata"
+}

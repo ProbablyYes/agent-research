@@ -1,0 +1,21 @@
+{
+  "status": "BLOCKED",
+  "reliable_billing_bound": false,
+  "real_generation_requests": 0,
+  "contract": {
+    "reliable_billing_bound": false,
+    "input_bound": 128000,
+    "input_nano_per_token": 150,
+    "output_nano_per_token": 600,
+    "catalog_sha256": "5bc13af5c1146fae977deaa08d18428f566991b50819c41a2ce6001e41ad2ff1",
+    "reason": "account_effective_fallback_and_enforced_billing_bound_not_verified",
+    "price_unit": "nanodollars per token; 1 USD = 1000000000 nanodollars",
+    "sources": [
+      "https://ofox.ai/docs/develop/observability/pricing",
+      "https://ofox.ai/docs/develop/observability/dashboard",
+      "https://ofox.ai/docs/develop/advanced/fallback",
+      "https://ofox.ai/docs/changelog"
+    ],
+    "qualification": "Public pricing is verified; complete per-request billing ceiling is not."
+  }
+}

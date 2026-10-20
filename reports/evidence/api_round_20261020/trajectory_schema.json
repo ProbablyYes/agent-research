@@ -1,0 +1,27 @@
+{
+  "record_type": "environment_step",
+  "fields": [
+    "round_id",
+    "phase",
+    "split",
+    "task_id",
+    "branch",
+    "step",
+    "history_prefix",
+    "observation_before",
+    "admissible_commands",
+    "raw_model_output",
+    "action",
+    "observation_after",
+    "done",
+    "won",
+    "request_id",
+    "usage",
+    "latency_seconds",
+    "reserved_nano_usd",
+    "estimated_nano_usd",
+    "stop_reason"
+  ],
+  "rows_exported": 0,
+  "reason": "No environment or model execution after blocked stage A"
+}

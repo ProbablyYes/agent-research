@@ -1,0 +1,10 @@
+{
+  "round_id": "api-agent-20261020",
+  "request_reservations": 0,
+  "reserved_nano_usd": 0,
+  "estimated_nano_usd": 0,
+  "budget_nano_usd": 3000000000,
+  "max_requests": 400,
+  "halted": "unverified_billing_bound",
+  "unresolved_requests": 0
+}

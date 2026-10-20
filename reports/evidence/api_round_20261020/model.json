@@ -1,0 +1,53 @@
+{
+  "id": "openai/gpt-4o-mini",
+  "object": "model",
+  "created": 1721260800,
+  "owned_by": "azure",
+  "canonical_slug": "gpt-4o-mini-2024-07-18",
+  "name": "GPT-4o Mini",
+  "description": "OpenAI's advanced small model, 60% cheaper than GPT-3.5 Turbo while scoring 82% on MMLU. Optimized for cost-effective tasks requiring strong language understanding and generation capabilities.",
+  "context_length": 128000,
+  "architecture": {
+    "modality": "text+image->text",
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "tokenizer": "gpt",
+    "instruct_type": null
+  },
+  "pricing": {
+    "prompt": "0.00000015",
+    "completion": "0.0000006",
+    "input_cache_read": "0.000000075",
+    "web_search": "0.014"
+  },
+  "top_provider": {
+    "context_length": 128000,
+    "max_completion_tokens": 16384,
+    "is_moderated": false
+  },
+  "per_request_limits": null,
+  "supported_parameters": [
+    "temperature",
+    "top_p",
+    "max_tokens",
+    "stop",
+    "tools",
+    "tool_choice",
+    "response_format"
+  ],
+  "default_parameters": null,
+  "expiration_date": null,
+  "is_deprecated": false,
+  "supported_endpoints": [
+    "/v1/chat/completions",
+    "/v1/responses"
+  ],
+  "aliases": [
+    "gpt-4o-mini"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "source_commit": "dcc66bd3d6d5f595ab5c5a88dc3935f261a1bae4",
+  "plan_sha256": "b5f7758bf79ca8604470a2a5d53205305ac2d968affd4bcf43bda39349dca46c",
+  "tasks_config_equal_parent": true,
+  "source_hashes_verified": true,
+  "old_code_plans_results_unchanged": true,
+  "upstream_clean": true,
+  "secret_scan": "PASS (exact key absent from tracked and new deliverables; no secret fingerprint retained)",
+  "ledger_mode": "0o600",
+  "budget": {
+    "round_id": "api-agent-20261020",
+    "request_reservations": 0,
+    "reserved_nano_usd": 0,
+    "estimated_nano_usd": 0,
+    "budget_nano_usd": 3000000000,
+    "max_requests": 400,
+    "halted": "unverified_billing_bound",
+    "unresolved_requests": 0
+  },
+  "real_tasks": 0,
+  "real_trajectory_rows": 0,
+  "tests": {
+    "passed": 37,
+    "failed": 0,
+    "seconds": 60.55,
+    "initial_failure_log_retained": true
+  },
+  "report_sha256": {
+    "reports/API_REAL_AGENT_PILOT.md": "72535f7c35d2067179e00d4debd62e1c829877636baac77d4656a36db17e8a99",
+    "reports/API_BUDGET_AUDIT.md": "9b949f619b1092f4e42475cd67e5edfdc31697728c17c47b0e4af16f93da665e",
+    "reports/API_TRAJECTORY_OBSERVATIONS.md": "5f14f030e97a3582806ec6165b10b2d83cc6cec8f010259fa2c714ecd2f32afc"
+  }
+}

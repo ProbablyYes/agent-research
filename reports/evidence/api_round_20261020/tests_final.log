@@ -1,0 +1,42 @@
+test_budget_exceeded_before_send (test_budget.BudgetTests) ... ok
+test_create_existing_refused (test_budget.BudgetTests) ... ok
+test_deadline_no_retry (test_budget.BudgetTests) ... ok
+test_duplicate_completed (test_budget.BudgetTests) ... ok
+test_http_error_round_stops (test_budget.BudgetTests) ... ok
+test_interrupted_reservation_survives_reopen (test_budget.BudgetTests) ... ok
+test_invalid_total (test_budget.BudgetTests) ... ok
+test_missing_ledger_not_recreated (test_budget.BudgetTests) ... ok
+test_missing_usage (test_budget.BudgetTests) ... ok
+test_model_change (test_budget.BudgetTests) ... ok
+test_output_limit_before_send (test_budget.BudgetTests) ... ok
+test_parse_failure_stops_preserves_output (test_budget.BudgetTests) ... ok
+test_process_exit_after_reserve (test_budget.BudgetTests) ... ok
+test_redirect_rejected (test_budget.BudgetTests) ... ok
+test_request_limit (test_budget.BudgetTests) ... ok
+test_reserve_before_send (test_budget.BudgetTests) ... ok
+test_secret_response_not_saved (test_budget.BudgetTests) ... ok
+test_smoke_pilot_share_totals (test_budget.BudgetTests) ... ok
+test_strict_no_fuzzy_fallback (test_budget.BudgetTests) ... ok
+test_success_reservation_not_refunded (test_budget.BudgetTests) ... ok
+test_timeout_unknown_bill_preserved (test_budget.BudgetTests) ... ok
+test_unknown_billing_blocks_key_read_and_network (test_budget.BudgetTests) ... ok
+test_unknown_billing_field (test_budget.BudgetTests) ... ok
+test_wall_clock_deadline (test_budget.BudgetTests) ... ok
+test_digest_and_request_bound (test_plan.PlanTests) ... ok
+test_exact_tasks_and_parameters (test_plan.PlanTests) ... ok
+test_no_collection_authorization (test_plan.PlanTests) ... ok
+test_separate_model_identity (test_plan.PlanTests) ... ok
+test_bad_json_no_retry (test_probe.ProbeTests) ... ok
+test_missing_usage_not_zero_cost (test_probe.ProbeTests) ... ok
+test_permissions_and_symlink (test_probe.ProbeTests) ... ok
+test_redirect_no_follow (test_probe.ProbeTests) ... ok
+test_reservation_blocks_second_call (test_probe.ProbeTests) ... ok
+test_server_error_no_retry (test_probe.ProbeTests) ... ok
+test_success_and_estimate (test_probe.ProbeTests) ... ok
+test_timeout_no_retry_no_secret (test_probe.ProbeTests) ... ok
+test_unexpected_model_redacted (test_probe.ProbeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 60.550s
+
+OK
