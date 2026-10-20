@@ -1,0 +1,218 @@
+{
+  "artifact_base_directory": "/home/hly/agent-research/public_trajectory_research/phase1",
+  "research_head_before_extraction": "ae0425469341b381a2a69badc33d5e150078f09a",
+  "dataset_kind": "external_public_model_trajectories",
+  "not_own_alfworld_pilot": true,
+  "source_url": "https://sierra-tau-bench-public.s3.amazonaws.com/submissions/gpt-5-6-sol_sierra_2026-08-04/trajectories/banking_knowledge_results.json",
+  "download_date": "2026-10-20",
+  "source_object_bytes": 150287419,
+  "source_etag": "aa82aa9efa074bbc843aaa04ef697d5f-18",
+  "source_prefix_bytes": 3001199,
+  "source_prefix_sha256": "151e32f0abfe31329207e17cae1121d158d800ee378c1621def1096425c614b6",
+  "full_bundle_sha256": null,
+  "license": "Repository MIT; separate S3-specific license not found; local research copies, no raw redistribution this round",
+  "benchmark_declared_version": "1.0.1",
+  "runtime_git_commit": "fc0055dc4e0a316c3f83133267fbd6faaa770992",
+  "catalog_git_commit": "989d3285ae669e49503324bdb9981bf14fccedeb",
+  "agent_info": {
+    "implementation": "llm_agent",
+    "llm": "openai/responses/gpt-5.6-sol",
+    "llm_args": {
+      "extra_body": {
+        "reasoning_effort": "xhigh"
+      },
+      "allowed_openai_params": [
+        "tool_choice"
+      ]
+    },
+    "voice_settings": null
+  },
+  "user_info": {
+    "implementation": "user_simulator",
+    "llm": "gpt-5.2",
+    "llm_args": {
+      "reasoning_effort": "low"
+    },
+    "voice_settings": null,
+    "persona_config": null
+  },
+  "sampling": "Inspect source positions 0..9, take first two reward=1 and first two reward=0 with nonempty messages; preserve order; outcome-balanced convenience sample, not prevalence estimate. Infrastructure failure at position8 retained in screening log, not silently replaced.",
+  "screening": [
+    {
+      "source_index": 0,
+      "id": "d223177a-0554-467a-acf8-fdc8bb42bda7",
+      "task_id": "task_002",
+      "reward": 1.0,
+      "messages": 17,
+      "termination_reason": "user_stop"
+    },
+    {
+      "source_index": 1,
+      "id": "17ed364d-280c-4fa2-bcf9-b56e22743c8d",
+      "task_id": "task_004",
+      "reward": 1.0,
+      "messages": 21,
+      "termination_reason": "user_stop"
+    },
+    {
+      "source_index": 2,
+      "id": "6a6b3f93-729e-44c7-81b5-e85a277c30b2",
+      "task_id": "task_006",
+      "reward": 1.0,
+      "messages": 19,
+      "termination_reason": "user_stop"
+    },
+    {
+      "source_index": 3,
+      "id": "b27039fe-3e98-447e-9d73-d5df5582ecc2",
+      "task_id": "task_032",
+      "reward": 1.0,
+      "messages": 25,
+      "termination_reason": "user_stop"
+    },
+    {
+      "source_index": 4,
+      "id": "dd8b1ef1-8f8d-433b-b7f0-051144968cbf",
+      "task_id": "task_003",
+      "reward": 1.0,
+      "messages": 26,
+      "termination_reason": "user_stop"
+    },
+    {
+      "source_index": 5,
+      "id": "446194bd-e9f8-49d3-a3ca-0f3e30c31359",
+      "task_id": "task_023",
+      "reward": 1.0,
+      "messages": 24,
+      "termination_reason": "user_stop"
+    },
+    {
+      "source_index": 6,
+      "id": "355dc449-c146-4b64-93af-71eb8cb9c32d",
+      "task_id": "task_033",
+      "reward": 1.0,
+      "messages": 34,
+      "termination_reason": "user_stop"
+    },
+    {
+      "source_index": 7,
+      "id": "a07c0900-1a02-4ede-8b77-a298e67ffcbc",
+      "task_id": "task_007",
+      "reward": 0.0,
+      "messages": 25,
+      "termination_reason": "user_stop"
+    },
+    {
+      "source_index": 8,
+      "id": "426c5700-2701-45b6-bd1f-8e0605b5da71",
+      "task_id": "task_005",
+      "reward": null,
+      "messages": 0,
+      "termination_reason": "infrastructure_error"
+    },
+    {
+      "source_index": 9,
+      "id": "fcda0373-3e75-41bc-ae59-e09186f0b089",
+      "task_id": "task_012",
+      "reward": 0.0,
+      "messages": 23,
+      "termination_reason": "user_stop"
+    }
+  ],
+  "samples": [
+    {
+      "sample_id": "task_002_trial0",
+      "source_array_index": 0,
+      "source_json_pointer": "/simulations/0",
+      "source_byte_range_inclusive": [
+        1254668,
+        1372765
+      ],
+      "id": "d223177a-0554-467a-acf8-fdc8bb42bda7",
+      "task_id": "task_002",
+      "trial": 0,
+      "reward": 1.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "event_count": 17,
+      "raw_file": "raw/task_002_trial0.json",
+      "sha256": "668c8b050a44ffda4aa8fbf4b468254db6effef3072ac5ed22c52e750d55599e",
+      "bytes": 118098,
+      "readable_file": "readable/task_002_trial0.md",
+      "termination_reason": "user_stop"
+    },
+    {
+      "sample_id": "task_004_trial0",
+      "source_array_index": 1,
+      "source_json_pointer": "/simulations/1",
+      "source_byte_range_inclusive": [
+        1372772,
+        1530918
+      ],
+      "id": "17ed364d-280c-4fa2-bcf9-b56e22743c8d",
+      "task_id": "task_004",
+      "trial": 0,
+      "reward": 1.0,
+      "reward_basis": [
+        "ACTION"
+      ],
+      "event_count": 21,
+      "raw_file": "raw/task_004_trial0.json",
+      "sha256": "ed4d5dfbba2b153d88aa3b1fe5eca9664eb4a5ab5f387457af559cf7f335cee2",
+      "bytes": 158147,
+      "readable_file": "readable/task_004_trial0.md",
+      "termination_reason": "user_stop"
+    },
+    {
+      "sample_id": "task_007_trial0",
+      "source_array_index": 7,
+      "source_json_pointer": "/simulations/7",
+      "source_byte_range_inclusive": [
+        2359225,
+        2733832
+      ],
+      "id": "a07c0900-1a02-4ede-8b77-a298e67ffcbc",
+      "task_id": "task_007",
+      "trial": 0,
+      "reward": 0.0,
+      "reward_basis": [
+        "DB"
+      ],
+      "event_count": 25,
+      "raw_file": "raw/task_007_trial0.json",
+      "sha256": "05f389947d655bf7d9c5bcdff5e85b4c2aa37e7894ca9dc0810338ff0c725753",
+      "bytes": 374608,
+      "readable_file": "readable/task_007_trial0.md",
+      "termination_reason": "user_stop"
+    },
+    {
+      "sample_id": "task_012_trial0",
+      "source_array_index": 9,
+      "source_json_pointer": "/simulations/9",
+      "source_byte_range_inclusive": [
+        2736079,
+        3001198
+      ],
+      "id": "fcda0373-3e75-41bc-ae59-e09186f0b089",
+      "task_id": "task_012",
+      "trial": 0,
+      "reward": 0.0,
+      "reward_basis": [
+        "ACTION"
+      ],
+      "event_count": 23,
+      "raw_file": "raw/task_012_trial0.json",
+      "sha256": "5354ba0b35f7c3a1406f4eb11f5630e0b36704f80a84b7f12c7323c9187842ca",
+      "bytes": 265120,
+      "readable_file": "readable/task_012_trial0.md",
+      "termination_reason": "user_stop"
+    }
+  ],
+  "limitations": [
+    "API alias not immutable backend checkpoint",
+    "Only published message completeness verified, not provider hidden reasoning or every actual prompt",
+    "No interventions or causal estimates",
+    "Raw source bundle partial transfer; prefix and selected object hashes only"
+  ]
+}

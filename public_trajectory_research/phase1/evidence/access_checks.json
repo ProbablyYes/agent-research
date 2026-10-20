@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-20",
+  "checks": [
+    {
+      "source": "SWE-Marathon",
+      "url": "https://ralphbench-logs.s3.us-west-2.amazonaws.com/v1.1/slack-clone/_manifest.json",
+      "status": 403,
+      "body_evidence": "marathon_manifest.txt",
+      "scope": "Only this path tested; not proof all website endpoints inaccessible"
+    },
+    {
+      "source": "Sierra",
+      "url": "https://sierra-tau-bench-public.s3.amazonaws.com/submissions/gpt-5-6-sol_sierra_2026-08-04/trajectories/banking_knowledge_results.json",
+      "initial_status": 200,
+      "content_length": 150287419,
+      "range_validation": "range_verification.json"
+    }
+  ]
+}

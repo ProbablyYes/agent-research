@@ -1,0 +1,86 @@
+[
+  {
+    "file": "faap_readme.md",
+    "url": "https://raw.githubusercontent.com/xz-Sean/cli_trajectory_analysis/ea0a3af006276c31db3807c48b3ef7b5ac2aa72b/README.md",
+    "bytes": 4317,
+    "sha256": "62ea437169f48f3d62b706eff405aa9d37db8953b734da18a3b2b61bb30501d0"
+  },
+  {
+    "file": "faap_codebook.md",
+    "url": "https://raw.githubusercontent.com/xz-Sean/cli_trajectory_analysis/ea0a3af006276c31db3807c48b3ef7b5ac2aa72b/docs/CODEBOOK.md",
+    "bytes": 15966,
+    "sha256": "23ff5255db58ae0371be5ff0189537278b6e8976a6fa8b62c178e77fbdf25171"
+  },
+  {
+    "file": "faap.html",
+    "url": "https://arxiv.org/html/2607.09510v1",
+    "bytes": 254743,
+    "sha256": "b6dcfc145f46cc8a17383904046faf355bfe0c3735166c3523074f633dfba402"
+  },
+  {
+    "file": "tau_readme.md",
+    "url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/989d3285ae669e49503324bdb9981bf14fccedeb/README.md",
+    "bytes": 14718,
+    "sha256": "43bf9d18afb8b9ce2f11dc0ffb4acd46345618b9ac49a01f919cb723d8364a4f"
+  },
+  {
+    "file": "tau_submission.json",
+    "url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/989d3285ae669e49503324bdb9981bf14fccedeb/web/leaderboard/public/submissions/gpt-5-6-sol_sierra_2026-08-04/submission.json",
+    "bytes": 1363,
+    "sha256": "0394128dc04d58ff77846e404ce588d786988a5c2ffcb69a8af09f19c46c97a4"
+  },
+  {
+    "file": "tau_viewer.jsx",
+    "url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/989d3285ae669e49503324bdb9981bf14fccedeb/web/leaderboard/src/components/TrajectoryVisualizer.jsx",
+    "bytes": 56316,
+    "sha256": "47a572d4bf74ed2db4c68836cbf210b5db31e9e3e03ede6a3c858efd2338e57b"
+  },
+  {
+    "file": "tau_license.txt",
+    "url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/989d3285ae669e49503324bdb9981bf14fccedeb/LICENSE",
+    "bytes": 1072,
+    "sha256": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe"
+  },
+  {
+    "file": "marathon_readme.md",
+    "url": "https://raw.githubusercontent.com/abundant-ai/swe-marathon/8eebe71b0eb1bb7e7f346bb6ac9832bc01cc89db/README.md",
+    "bytes": 3164,
+    "sha256": "78f6623da9f3b275dbb9de4b3a1438ad62e94f16a0bc0d101be47183f4b9c07a"
+  },
+  {
+    "file": "marathon_download.py",
+    "url": "https://raw.githubusercontent.com/abundant-ai/swe-marathon/8eebe71b0eb1bb7e7f346bb6ac9832bc01cc89db/scripts/read-swe-marathon-logs.py",
+    "bytes": 23174,
+    "sha256": "aa56a69777e3103fd0056bc681b266908132fa76ad5844abe50d19c993af915b"
+  },
+  {
+    "file": "faap_example.json",
+    "url": "https://raw.githubusercontent.com/xz-Sean/cli_trajectory_analysis/ea0a3af006276c31db3807c48b3ef7b5ac2aa72b/data/v2_annotations/acl-permissions-inheritance__miniswe__claude.json",
+    "bytes": 1119,
+    "sha256": "94b1904c8b6f56338e90a7989c8474e0fb89a7ef7f14f98a447371aa4da4f752"
+  },
+  {
+    "file": "tau_knowledge.html",
+    "url": "https://arxiv.org/html/2603.04370v1",
+    "bytes": 796372,
+    "sha256": "0e68811ea6ee59aa4f7d77781fb636ed6518e3345b45d50f1e1c9271c6661aef"
+  },
+  {
+    "file": "tau2.html",
+    "url": "https://arxiv.org/html/2506.07982v1",
+    "bytes": 1733346,
+    "sha256": "921305b1f873057c3e090cfe5796c66ca7af9d1bafa9e3d4dd745fe379016ce8"
+  },
+  {
+    "file": "marathon_site.html",
+    "url": "https://www.swe-marathon.org/",
+    "bytes": 4714,
+    "sha256": "8bee5c3bbe68e574564a9aabd6137d475b71a919151166996727f902a440382e"
+  },
+  {
+    "file": "marathon_paper.pdf",
+    "url": "https://www.swe-marathon.org/swe-marathon-paper.pdf",
+    "bytes": 1970136,
+    "sha256": "de7cc0b235a12568c50b7d71c8f028349fe9fb5dcb9b82a4cd45ff9aa4c81c6d"
+  }
+]

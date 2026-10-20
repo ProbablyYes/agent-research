@@ -1,0 +1,246 @@
+{
+  "samples": 4,
+  "messages": 86,
+  "checks": [
+    "prefix_sha256",
+    "exact_source_bytes_per_sample",
+    "sample_sha256",
+    "message_count",
+    "lossless_readable_roundtrip",
+    "tool_id_linkage_and_order",
+    "published_reward_field_consistency"
+  ],
+  "results": [
+    {
+      "sample_id": "task_002_trial0",
+      "messages": 17,
+      "tool_calls": 8,
+      "tool_returns": 8,
+      "byte_hash_and_render_roundtrip": true,
+      "published_reward_fields_consistent": true,
+      "reward_reexecuted": false
+    },
+    {
+      "sample_id": "task_004_trial0",
+      "messages": 21,
+      "tool_calls": 7,
+      "tool_returns": 7,
+      "byte_hash_and_render_roundtrip": true,
+      "published_reward_fields_consistent": true,
+      "reward_reexecuted": false
+    },
+    {
+      "sample_id": "task_007_trial0",
+      "messages": 25,
+      "tool_calls": 14,
+      "tool_returns": 14,
+      "byte_hash_and_render_roundtrip": true,
+      "published_reward_fields_consistent": true,
+      "reward_reexecuted": false
+    },
+    {
+      "sample_id": "task_012_trial0",
+      "messages": 23,
+      "tool_calls": 12,
+      "tool_returns": 12,
+      "byte_hash_and_render_roundtrip": true,
+      "published_reward_fields_consistent": true,
+      "reward_reexecuted": false
+    }
+  ],
+  "simulation_schema": {
+    "id": "str",
+    "task_id": "str",
+    "timestamp": "str",
+    "start_time": "str",
+    "end_time": "str",
+    "duration": "float",
+    "termination_reason": "str",
+    "agent_cost": "float",
+    "user_cost": "float",
+    "reward_info": "dict",
+    "messages": "list",
+    "ticks": "NoneType",
+    "trial": "int",
+    "seed": "int",
+    "mode": "str",
+    "speech_environment": "NoneType",
+    "review": "NoneType",
+    "user_only_review": "NoneType",
+    "info": "NoneType",
+    "auth_classification": "NoneType",
+    "hallucination_retries_used": "int",
+    "hallucination_check": "NoneType",
+    "provider_session_id": "NoneType",
+    "policy": "str",
+    "effect_timeline": "NoneType"
+  },
+  "schema": {
+    "assistant": {
+      "role": [
+        "str"
+      ],
+      "content": [
+        "NoneType",
+        "str"
+      ],
+      "tool_calls": [
+        "NoneType",
+        "list"
+      ],
+      "is_audio": [
+        "bool"
+      ],
+      "turn_idx": [
+        "int"
+      ],
+      "timestamp": [
+        "str"
+      ],
+      "cost": [
+        "float"
+      ],
+      "usage": [
+        "NoneType",
+        "dict"
+      ],
+      "raw_data": [
+        "NoneType",
+        "dict"
+      ],
+      "generation_time_seconds": [
+        "NoneType",
+        "float"
+      ],
+      "audio_format": [
+        "NoneType"
+      ],
+      "audio_path": [
+        "NoneType"
+      ],
+      "audio_script_gold": [
+        "NoneType"
+      ],
+      "speech_effects": [
+        "NoneType"
+      ],
+      "source_effects": [
+        "NoneType"
+      ],
+      "channel_effects": [
+        "NoneType"
+      ],
+      "turn_taking_action": [
+        "NoneType"
+      ],
+      "utterance_ids": [
+        "NoneType"
+      ],
+      "chunk_id": [
+        "NoneType"
+      ],
+      "is_final_chunk": [
+        "bool"
+      ],
+      "source": [
+        "NoneType"
+      ],
+      "contains_speech": [
+        "bool"
+      ]
+    },
+    "user": {
+      "role": [
+        "str"
+      ],
+      "content": [
+        "NoneType",
+        "str"
+      ],
+      "tool_calls": [
+        "NoneType",
+        "list"
+      ],
+      "is_audio": [
+        "bool"
+      ],
+      "turn_idx": [
+        "int"
+      ],
+      "timestamp": [
+        "str"
+      ],
+      "cost": [
+        "float"
+      ],
+      "usage": [
+        "dict"
+      ],
+      "raw_data": [
+        "dict"
+      ],
+      "generation_time_seconds": [
+        "NoneType"
+      ],
+      "audio_format": [
+        "NoneType"
+      ],
+      "audio_path": [
+        "NoneType"
+      ],
+      "audio_script_gold": [
+        "NoneType"
+      ],
+      "speech_effects": [
+        "NoneType"
+      ],
+      "source_effects": [
+        "NoneType"
+      ],
+      "channel_effects": [
+        "NoneType"
+      ],
+      "turn_taking_action": [
+        "NoneType"
+      ],
+      "utterance_ids": [
+        "NoneType"
+      ],
+      "chunk_id": [
+        "NoneType"
+      ],
+      "is_final_chunk": [
+        "bool"
+      ],
+      "source": [
+        "NoneType"
+      ],
+      "contains_speech": [
+        "bool"
+      ]
+    },
+    "tool": {
+      "id": [
+        "str"
+      ],
+      "role": [
+        "str"
+      ],
+      "content": [
+        "str"
+      ],
+      "requestor": [
+        "str"
+      ],
+      "error": [
+        "bool"
+      ],
+      "turn_idx": [
+        "int"
+      ],
+      "timestamp": [
+        "str"
+      ]
+    }
+  }
+}

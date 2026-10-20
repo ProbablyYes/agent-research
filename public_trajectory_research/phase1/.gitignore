@@ -1,0 +1,9 @@
+# Local third-party research copies; S3 redistribution license not independently verified.
+raw/
+readable/
+evidence/*
+!evidence/source_urls.json
+!evidence/source_inventory.json
+!evidence/access_checks.json
+!evidence/range_verification.json
+!evidence/verification.json

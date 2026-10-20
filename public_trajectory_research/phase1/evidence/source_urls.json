@@ -1,0 +1,16 @@
+{
+  "faap_readme.md": "https://raw.githubusercontent.com/xz-Sean/cli_trajectory_analysis/ea0a3af006276c31db3807c48b3ef7b5ac2aa72b/README.md",
+  "faap_codebook.md": "https://raw.githubusercontent.com/xz-Sean/cli_trajectory_analysis/ea0a3af006276c31db3807c48b3ef7b5ac2aa72b/docs/CODEBOOK.md",
+  "faap.html": "https://arxiv.org/html/2607.09510v1",
+  "tau_readme.md": "https://raw.githubusercontent.com/sierra-research/tau2-bench/989d3285ae669e49503324bdb9981bf14fccedeb/README.md",
+  "tau_submission.json": "https://raw.githubusercontent.com/sierra-research/tau2-bench/989d3285ae669e49503324bdb9981bf14fccedeb/web/leaderboard/public/submissions/gpt-5-6-sol_sierra_2026-08-04/submission.json",
+  "tau_viewer.jsx": "https://raw.githubusercontent.com/sierra-research/tau2-bench/989d3285ae669e49503324bdb9981bf14fccedeb/web/leaderboard/src/components/TrajectoryVisualizer.jsx",
+  "tau_license.txt": "https://raw.githubusercontent.com/sierra-research/tau2-bench/989d3285ae669e49503324bdb9981bf14fccedeb/LICENSE",
+  "marathon_readme.md": "https://raw.githubusercontent.com/abundant-ai/swe-marathon/8eebe71b0eb1bb7e7f346bb6ac9832bc01cc89db/README.md",
+  "marathon_download.py": "https://raw.githubusercontent.com/abundant-ai/swe-marathon/8eebe71b0eb1bb7e7f346bb6ac9832bc01cc89db/scripts/read-swe-marathon-logs.py",
+  "faap_example.json": "https://raw.githubusercontent.com/xz-Sean/cli_trajectory_analysis/ea0a3af006276c31db3807c48b3ef7b5ac2aa72b/data/v2_annotations/acl-permissions-inheritance__miniswe__claude.json",
+  "tau_knowledge.html": "https://arxiv.org/html/2603.04370v1",
+  "tau2.html": "https://arxiv.org/html/2506.07982v1",
+  "marathon_site.html": "https://www.swe-marathon.org/",
+  "marathon_paper.pdf": "https://www.swe-marathon.org/swe-marathon-paper.pdf"
+}

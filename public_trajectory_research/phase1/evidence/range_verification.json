@@ -1,0 +1,9 @@
+{
+  "url": "https://sierra-tau-bench-public.s3.amazonaws.com/submissions/gpt-5-6-sol_sierra_2026-08-04/trajectories/banking_knowledge_results.json",
+  "http_status": 206,
+  "content_range": "bytes 0-3001198/150287419",
+  "etag": "\"aa82aa9efa074bbc843aaa04ef697d5f-18\"",
+  "sha256": "151e32f0abfe31329207e17cae1121d158d800ee378c1621def1096425c614b6",
+  "exact_prefix_match": true,
+  "bytes": 3001199
+}
