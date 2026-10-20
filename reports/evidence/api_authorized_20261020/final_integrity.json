@@ -1,0 +1,41 @@
+{
+  "implementation_commit": "da6a99e9e4317069de9a03303beaaedda14dcacf",
+  "authorized_plan_sha256": "a1d9a71653b49bbeaa368afd61f95855a23cfbe142e7663a5faed7bbc17dfe83",
+  "api_source_hashes_match": true,
+  "upstream_clean": true,
+  "original_code_and_prior_runs_unchanged": true,
+  "credential_scan": "PASS exact key absent; Authorization absent from experiment files",
+  "files_scanned": 220,
+  "report_sha256": {
+    "reports/API_REAL_AGENT_PILOT.md": "dc7873690618c8eb5ecafdc502f0c26f429b6104eaa86c4dba934bb5fc00edaf",
+    "reports/API_BUDGET_AUDIT.md": "3664c7d52e19da2778b2ede8d1f7b4f9047cf897c0173fb9ff546d074b439cad",
+    "reports/API_TRAJECTORY_OBSERVATIONS.md": "d0ece02cf4d4668171d312a4a77cc1377b46b2e21addbc06ac7c56e265a22f5b"
+  },
+  "run_file_sha256": {
+    "experiments/api_agent_round_20261020/pilot/events.jsonl": "9004ba8978dcafc439da14370c26cd08a1c601fb77e023f6f737903284df8f90",
+    "experiments/api_agent_round_20261020/pilot/frozen_controls_before_test.json": "3b672139b5331d0d09c691ccc31b69fcb138cd4d9835845a56579a82f2efded9",
+    "experiments/api_agent_round_20261020/pilot/frozen_models_before_test.pkl": "2e952b83d7732b20e679416eea70b831e81dad7ab146c9ec5da63a20b38b8b69",
+    "experiments/api_agent_round_20261020/pilot/original_raw/test_rows.csv": "5ac8dd326f65129ca7f49be4866c02ec20ad6b850a658da4d45c281604573d2f",
+    "experiments/api_agent_round_20261020/pilot/original_raw/train_rows.csv": "eac74618c8577fa679a815dd47a136f1fdaab2d92cff4b4b5f06d6c741542e1a",
+    "experiments/api_agent_round_20261020/pilot/original_raw/val_rows.csv": "5a3a0274864e2ba5aec50e6caeaaee145a44478695fe55f744da44c82b9670a5",
+    "experiments/api_agent_round_20261020/pilot/plan.json": "a1d9a71653b49bbeaa368afd61f95855a23cfbe142e7663a5faed7bbc17dfe83",
+    "experiments/api_agent_round_20261020/pilot/requests.jsonl": "a8d1e47866dfde81c9edf1ff53497d3411b7cde08466fb300b80a3a254ca8238",
+    "experiments/api_agent_round_20261020/pilot/summary.json": "9a7500a99fe9471c7c509a8fae0da01137611b3caede926d29fef4ac37edc622",
+    "experiments/api_agent_round_20261020/pilot/test_records.json": "15776140d3855ff505a7ae4db1a7bf603dfc808a044e4dc0e6884dac8fa10b79",
+    "experiments/api_agent_round_20261020/pilot/test_trial_T20190908_022321_380927_0.json": "71ba71ef5960d8c72b50eff3db8f7ed16bf6e14bfa7c4d8a2d19952ba6466201",
+    "experiments/api_agent_round_20261020/pilot/test_trial_T20190909_064053_839817_0.json": "dc02efe3263b39fde90db64cbde75b534cf41a388243d7410ff8be0bfa83cd53",
+    "experiments/api_agent_round_20261020/pilot/train_records.json": "02586d2564ce25c24592c8285cec5082d878212c45bc7d4f01a24bec69149dec",
+    "experiments/api_agent_round_20261020/pilot/train_trial_T20190907_224507_776787_0.json": "a1b70f7bc5622fce808b6a0d87e0c776528f1765671fefbb82960650260d543f",
+    "experiments/api_agent_round_20261020/pilot/train_trial_T20190909_151853_245524_0.json": "cbed215627d329ed6075f5e5d50c8e145c2f2f055e6cbc23faa2d4c4e3f8947f",
+    "experiments/api_agent_round_20261020/pilot/trajectories.jsonl": "90e7d719b0adc40585073359d7305b9b709ceba02437db70fa33a2e7312bf2f2",
+    "experiments/api_agent_round_20261020/pilot/val_records.json": "98f3369cebc85aa5eaf030029d8bd61bf30481b035da0463f05186081c185919",
+    "experiments/api_agent_round_20261020/pilot/val_trial_T20190908_033721_967359_0.json": "36ce6e7face2dfca3a9f590e6c78d08d1b585becc93e485f81d147a3e19e1aaf",
+    "experiments/api_agent_round_20261020/pilot/val_trial_T20190908_164236_518264_0.json": "e2a75bc22f2a59f5b4b285758ffaba41c2a947f79c40f44db66a4e74d452aab2",
+    "experiments/api_agent_round_20261020/smoke/events.jsonl": "08aab7dc2e971926750f75435b3c58bcea482847ca97efd164f4df241ff395d8",
+    "experiments/api_agent_round_20261020/smoke/plan.json": "a1d9a71653b49bbeaa368afd61f95855a23cfbe142e7663a5faed7bbc17dfe83",
+    "experiments/api_agent_round_20261020/smoke/requests.jsonl": "eb13a287e03166add12372fc33a2f967b8cd9a8b02ec1e483e1ef2d3a324c84b",
+    "experiments/api_agent_round_20261020/smoke/summary.json": "19cfe18973104e76d3a6000b75e627ef0a6e4bc4c05e0f7cd350c1338fcbc17c",
+    "experiments/api_agent_round_20261020/smoke/trajectories.jsonl": "ff301531066f5f9ed88c1e5c5801730c5a6272f311e31f23ca697f8de54ff70d"
+  },
+  "experiment_bytes": 40545600
+}

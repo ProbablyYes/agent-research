@@ -1,0 +1,6 @@
+{
+  "branches_csv_recalculated": 12,
+  "independent_replay_snapshot_equalities": 12,
+  "original_failure_metrics_exact_match": true,
+  "local_qwen_plan_validation": "PASS"
+}

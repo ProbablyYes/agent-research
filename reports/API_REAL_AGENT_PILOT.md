@@ -1,58 +1,69 @@
-# API 真实 Agent Pilot：阶段 A 阻断
+# API 真实 Agent 工程 Pilot：完成
 
-2026-10-20，Asia/Shanghai。**本轮 No-Go，未执行真实 Agent Smoke 或六任务 Pilot。** 用户已授权本轮新增USD3、最多400次；本次停止不是缺少运行授权，而是用户明确要求「如果缺少可靠费用上界……应停止并报告」。
+2026-10-20，Asia/Shanghai。模型OFOX `openai/gpt-4o-mini`，代码Commit `da6a99e9e4317069de9a03303beaaedda14dcacf`。后端权重/服务revision不可证明，不能冒充Qwen2.5-7B复现。
 
-## 实际执行与结果
+## 授权和执行边界
 
-| 项目 | 本轮实际结果 |
-|---|---|
-| 公开模型目录查询 | 免认证GET，HTTP200；见catalog_check.json |
-| 新增真实模型请求 | **0** |
-| 自然Smoke轨迹 / Pilot任务 / 分支轨迹 | **0 / 0 / 0** |
-| 输入 / 输出Token | **0 / 0**，本轮没有生成请求 |
-| 本轮累计费用预留 / 估算费用 | **USD0 / USD0**；非供应商账单审计 |
-| 有效 / 无效Checkpoint | **0 / 0**，未尝试，比例为null |
-| 各Baseline效用/Regret/成功率 | **null，未评测**，不能填0 |
-| 2026-10-16连接测试 | 历史单次成功，不计入本轮新增预算或Agent轨迹 |
+此前阶段A因账单上界未证实停止；负责人随后明确要求继续并接受预算不确定性。本轮以**名义目录价预算**执行，reliable_billing_bound仍为false，未伪造价格/模型attestation。授权记录及原账本前后快照见 `reports/evidence/api_authorized_20261020/authorization.json`。同一round_id和账本持续使用，没有清空次数或费用。此前阻断报告完整副本在该目录prior_reports/。
 
-## 阻断证据
+## 实际执行
 
-[执行] 当前目录确认openai/gpt-4o-mini、128000上下文、max_tokens支持、输入/输出每百万USD0.15/0.60。模型响应Usage格式沿用此前一次成功证据；没有以追加收费请求重新探测。
+- Smoke：20环境步，成功=False，协议通过=True，停止原因=budget_exhausted。自然轨迹，不产生反事实分叉。
+- Pilot：execution_complete=True；已保存配对6，有效6、无效0；行动前审计12/12通过。
+- 实际不同任务实例6个；Smoke复用第一训练任务，不是另抽第7个实例。环境轨迹数19（包括Smoke/base/Continue/Oracle）；总环境步304。
+- 请求预留/尝试260，完整成功返回260，未决0；输入112142、输出2141 Token；估算USD0.01810590，实际账单未核验。
+- 本轮正常完成，未触发异常停止；没有扩大任务、模型或预算，没有GPU或模型下载。
 
-[公开文档] OFOX有账户全局fallback配置；本轮未获有效配置读回证据，文档未明确证明空fallback数组必然覆盖当前账户默认设置。模型名事后校验只能在可能产生费用后发现换模型，不能成为发送前预算证明。额度变更记录还有110%警告/缓冲描述，不能据此声称账户严格硬封顶USD3。详见 [预算审计](API_BUDGET_AUDIT.md)。
+| 实例 | Split | 配对有效 | Continue成功/步数/U | Oracle Intervene成功/步数/U |
+|---|---|---|---|---|
+| trial_T20190908_022321_380927 | test | True | False / 20 / -1.200 | True / 7 / 0.880 |
+| trial_T20190909_064053_839817 | test | True | False / 20 / -1.200 | True / 8 / 0.870 |
+| trial_T20190907_224507_776787 | train | True | False / 20 / -1.200 | True / 7 / 0.880 |
+| trial_T20190909_151853_245524 | train | True | False / 20 / -1.200 | True / 7 / 0.880 |
+| trial_T20190908_033721_967359 | val | True | False / 20 / -1.200 | True / 7 / 0.880 |
+| trial_T20190908_164236_518264 | val | True | False / 20 / -1.200 | True / 8 / 0.870 |
 
-因此未将「目录价乘Token」提升为可靠实际账单上界；真实账本以unverified_billing_bound持久化停止。没有尝试别的模型、扩大预算或修改账户全局配置。
 
-## 本轮实现及其范围
+## 冻结策略的测试集结果
 
-新增 `api_pilot/budget.py`：SQLite持久账本、整数纳美元计价、发送前事务预留、400次总限额、USD3总限额、64 Token绝对输出限额、60秒墙钟截止、零重试、禁止重定向；失败、未知Usage、重复请求、未决请求均停止。复用仓库外现有密钥读取与安全session；不重新索要密钥。旧单次probe及其额度文件不改、不复用。
+以下只使用有效测试配对。original保留作者阈值搜索；corrected使用此前已审计的完整边界。Always策略并列。不是选择测试集赢家；不得据此声称P3/P4算法改进。
 
-新增严格ACTION解析，只接受单行ACTION和规范化后的精确admissible match，禁止原作者模糊匹配/首动作fallback。此为显式实验协议变化，不修改作者解析函数。解析失败保留已返回文本并停止，尚未接入真实环境采集。
+| 冻结策略 | n | 平均U | 成功率 | Regret | 干预率 | Quit率 |
+|---|---:|---:|---:|---:|---:|---:|
+| original | 2 | 0.0 | 0.0 | 0.875 | 0.0 | 1.0 |
+| corrected | 2 | 0.875 | 1.0 | 0.0 | 1.0 | 0.0 |
+| always_continue | 2 | -1.2 | 0.0 | 2.075 | 0.0 | 0.0 |
+| always_verify | 2 | 0.875 | 1.0 | 0.0 | 1.0 | 0.0 |
+| always_quit | 2 | 0.0 | 0.0 | 0.875 | 0.0 | 1.0 |
+| original_explicit_eu | 2 | 0.875 | 1.0 | 0.0 | 1.0 | 0.0 |
 
-**范围限制：**完成了传输/预算基础守卫与Mock测试，尚未完成云端collector的环境异常路径、六任务编排及回放端到端集成。由于计费门未通过，没有绕过它继续建设或执行C/D。已有AuditSession/paired_record/冻结Baseline机制保持原样，在新计划中列为必须复用的组件；本轮不声称它们已在真实云端轨迹上通过。
 
-## 计划与源码版本
+训练/验证/测试仍为原2/2/2，六个Prefix均为初始状态0。冻结事件位置697，首个test任务事件位置698；由持久化事件独立检查先后。冻结模型/阈值文件在Pilot输出目录；原始未过滤参考另存original_raw与summary.evaluation.original_raw，不覆盖valid_pairs。
 
-`api_pilot/plans/round_20261020/plan.json`保存本轮独立计划及source_commit/api_source_sha256；`plan.sha256.json`保存完整哈希。它复制原六任务、任务数据哈希、2/2/2划分、每任务初始Prefix、no_preview/expert_defer/H20、prompt模板与全部原参数，不重新抽样。Smoke只指定第一训练实例，不另抽任务。模型条件明确为OFOX GPT-4o-mini，后端revision未证实；不是本地Qwen基线。
+## 实现与验证
 
-计划执行状态为blocked，collector_integration_complete=false。原Qwen计划与作者Commit `9e3825b7eea89ee9dc88f1ccd11f277f8e10beb3`保持不变。最终指纹及源码Commit见 `reports/evidence/api_round_20261020/final_integrity.json`。
+原作者文件及本地Qwen计划保持不变。独立collect.py复用AuditSession、paired_record、freeze_baselines、evaluate_frozen，严格ACTION与confidence解析替换仅发生在进程内，退出恢复原函数。动作不合法、协议异常、环境异常均停止整轮，不fallback或补样。原始输出、prompt、环境反馈和全部审计事件保留。
 
-## 验证命令与证据
+离线证据：42项API/集成测试通过（197.308秒，包括Mock六任务12分支）；4项结算测试通过（2.719秒）；授权变更定向复测通过。以前CPU回放/成本/分母测试成果保留。本轮读回核对所有已完成分支的won、suffix steps、成本与utility；请求账本、事件Usage及响应文本逐项一致，详见results_verified.json。原版显式EU继续遗漏未来step成本，没有把未来真实长度输入部署策略。另独立读回CSV重算12条分支，与JSON一致；12组回放快照直接比较相等；从CSV重新训练原版failure并仅用val选阈值，其测试指标与保存结果完全一致（extended_checks.json）。
+
+## 实际命令
+
+运行时固定PYTHONDONTWRITEBYTECODE=1、PYTHONHASHSEED=13、OMP_NUM_THREADS=1、OPENBLAS_NUM_THREADS=1、MKL_NUM_THREADS=1，解释器为`.venvs/cinc-audit-py310/bin/python`：
 
 ```bash
-PYTHONDONTWRITEBYTECODE=1 .venvs/cinc-audit-py310/bin/python -m unittest discover -s tests/api_pilot -v
-PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=13 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-  .venvs/cinc-audit-py310/bin/python -m api_pilot.prepare_round
+python -m api_pilot.authorize
+python -m api_pilot.collect smoke
+python -m api_pilot.collect pilot
+python -m api_pilot.export experiments/api_agent_round_20261020/smoke
+python -m api_pilot.export experiments/api_agent_round_20261020/pilot
 ```
 
-第二条仅冻结计划和创建停止状态的账本，没有生成接口调用。create-only拒绝覆盖，不要重复运行来重置账本。最终测试结果见tests_final.log。初次测试失败日志保留：测试误将第156次24-Token预留判为超预算，正确拒绝点为第157次；只修正测试期望，未放宽USD3边界。
+这些阶段已经执行；输出目录存在会拒绝重跑。不要删除账本或输出后再试。完整命令日志见reports/evidence/api_authorized_20261020/。
 
-## 下一步所需证据
+## 工程判定
 
-需确认本Key有效fallback/routing设置和计费封顶语义（包括账户额度的缓冲），或取得供应商明确的单请求最大计费规则；无需再提供密钥。不能仅把contract中的false改true或填写伪造attestation。证据补齐后仍须完成collector集成与离线回归，再在既有授权限额内先Smoke、后Pilot。当前不提供假装可执行的六任务命令。
+本次六任务工程验收通过（Go）：完整采集、有效配对、成本读回、冻结顺序和文件隔离均通过。当前已停止全部生成请求；这不自动授权扩大实验。
 
-本轮暂停，不开发新算法。P3/P4及独立保留的P1/P2/P5均未改变。可访问状态相等仍不证明完整因果状态等价；expert_defer依赖环境Oracle Planner。
+## 结论边界
 
-## 本轮最终执行指纹
-
-[执行] 新增和既有API测试合计 **37/37通过，60.550秒**。实现Commit为 `dcc66bd3d6d5f595ab5c5a88dc3935f261a1bae4`。本轮plan SHA256为 `b5f7758bf79ca8604470a2a5d53205305ac2d968affd4bcf43bda39349dca46c`。prepare命令已实际运行并返回BLOCKED，账本为0请求/0预留；原本地plan验证通过。
+这是端到端工程验证，仅6个初始Prefix；不是中途干预时机研究，也不是论文完整复现。expert_defer调用环境Oracle Planner，是能力上界，不是普通LLM交接。可访问状态一致不等于native隐藏状态或完整因果状态等价。单次分支回报并非真实期望价值，极小train/val/test不可支持总体统计。P1/P2/P5与新猜想独立保留，本轮没有新算法开发。已停止，等待科研分析。

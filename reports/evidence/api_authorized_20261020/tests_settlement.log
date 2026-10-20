@@ -1,0 +1,9 @@
+test_budget_still_before_transmission (test_settlement.SettlementTests) ... ok
+test_length_output_preserved_no_retry (test_settlement.SettlementTests) ... ok
+test_settle_known_keep_unknown (test_settlement.SettlementTests) ... ok
+test_unknown_usage_never_settled (test_settlement.SettlementTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.719s
+
+OK

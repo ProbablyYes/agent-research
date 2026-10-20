@@ -1,0 +1,71 @@
+test_budget_exceeded_before_send (test_budget.BudgetTests) ... ok
+test_create_existing_refused (test_budget.BudgetTests) ... ok
+test_deadline_no_retry (test_budget.BudgetTests) ... ok
+test_duplicate_completed (test_budget.BudgetTests) ... ok
+test_http_error_round_stops (test_budget.BudgetTests) ... ok
+test_interrupted_reservation_survives_reopen (test_budget.BudgetTests) ... ok
+test_invalid_total (test_budget.BudgetTests) ... ok
+test_missing_ledger_not_recreated (test_budget.BudgetTests) ... ok
+test_missing_usage (test_budget.BudgetTests) ... ok
+test_model_change (test_budget.BudgetTests) ... ok
+test_output_limit_before_send (test_budget.BudgetTests) ... ok
+test_parse_failure_stops_preserves_output (test_budget.BudgetTests) ... ok
+test_process_exit_after_reserve (test_budget.BudgetTests) ... ok
+test_redirect_rejected (test_budget.BudgetTests) ... ok
+test_request_limit (test_budget.BudgetTests) ... ok
+test_reserve_before_send (test_budget.BudgetTests) ... ok
+test_secret_response_not_saved (test_budget.BudgetTests) ... ok
+test_smoke_pilot_share_totals (test_budget.BudgetTests) ... ok
+test_strict_no_fuzzy_fallback (test_budget.BudgetTests) ... ok
+test_success_reservation_not_refunded (test_budget.BudgetTests) ... ok
+test_timeout_unknown_bill_preserved (test_budget.BudgetTests) ... ok
+test_unknown_billing_blocks_key_read_and_network (test_budget.BudgetTests) ... ok
+test_unknown_billing_field (test_budget.BudgetTests) ... ok
+test_wall_clock_deadline (test_budget.BudgetTests) ... ok
+test_environment_exception_no_second_request (test_collect.CollectorTests) ... /home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/pddl/pddl.py:53: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_cool_then_place_in_recep-Potato-None-Microwave-18/trial_T20190909_151853_245524/game.tw-pddl' mode='r' encoding='UTF-8'>
+  data = json.load(open(filename_or_data))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_invalid_action_no_step (test_collect.CollectorTests) ... ok
+test_nominal_amendment_not_false_attestation (test_collect.CollectorTests) ... ok
+test_six_tasks_audits_freeze_before_test (test_collect.CollectorTests) ... train:trial_T20190909_151853_245524:0 valid=True
+/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/pddl/pddl.py:53: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/train/pick_heat_then_place_in_recep-Egg-None-Fridge-20/trial_T20190907_224507_776787/game.tw-pddl' mode='r' encoding='UTF-8'>
+  data = json.load(open(filename_or_data))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+train:trial_T20190907_224507_776787:0 valid=True
+/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/pddl/pddl.py:53: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_two_obj_and_place-SprayBottle-None-GarbageCan-419/trial_T20190908_164236_518264/game.tw-pddl' mode='r' encoding='UTF-8'>
+  data = json.load(open(filename_or_data))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+val:trial_T20190908_164236_518264:0 valid=True
+/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/pddl/pddl.py:53: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-24/trial_T20190908_033721_967359/game.tw-pddl' mode='r' encoding='UTF-8'>
+  data = json.load(open(filename_or_data))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+val:trial_T20190908_033721_967359:0 valid=True
+/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/pddl/pddl.py:53: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/game.tw-pddl' mode='r' encoding='UTF-8'>
+  data = json.load(open(filename_or_data))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test:trial_T20190908_022321_380927:0 valid=True
+/home/hly/agent-research/.venvs/cinc-audit-py310/lib/python3.10/site-packages/textworld/envs/pddl/pddl.py:53: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/hly/agent-research/data/alfworld-cinc-audit/json_2.1.1/valid_unseen/pick_two_obj_and_place-SoapBar-None-GarbageCan-424/trial_T20190909_064053_839817/game.tw-pddl' mode='r' encoding='UTF-8'>
+  data = json.load(open(filename_or_data))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test:trial_T20190909_064053_839817:0 valid=True
+ok
+test_smoke_real_env_mock_api (test_collect.CollectorTests) ... ok
+test_digest_and_request_bound (test_plan.PlanTests) ... ok
+test_exact_tasks_and_parameters (test_plan.PlanTests) ... ok
+test_no_collection_authorization (test_plan.PlanTests) ... ok
+test_separate_model_identity (test_plan.PlanTests) ... ok
+test_bad_json_no_retry (test_probe.ProbeTests) ... ok
+test_missing_usage_not_zero_cost (test_probe.ProbeTests) ... ok
+test_permissions_and_symlink (test_probe.ProbeTests) ... ok
+test_redirect_no_follow (test_probe.ProbeTests) ... ok
+test_reservation_blocks_second_call (test_probe.ProbeTests) ... ok
+test_server_error_no_retry (test_probe.ProbeTests) ... ok
+test_success_and_estimate (test_probe.ProbeTests) ... ok
+test_timeout_no_retry_no_secret (test_probe.ProbeTests) ... ok
+test_unexpected_model_redacted (test_probe.ProbeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 197.308s
+
+OK
