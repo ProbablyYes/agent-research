@@ -1,7 +1,7 @@
-"""Fail-closed persistent accounting. Nanodollars; reservations never refunded.
+"""Fail-closed persistent accounting. Nanodollars; unknown requests retain full reservations.
 
-A verified per-request billing bound is a prerequisite, NOT inferred from price metadata.
-No CLI dispatch is provided while the real round's billing gate is unresolved.
+Pricing metadata is not a verified bill ceiling. An explicit user acceptance of
+nominal-price accounting can permit execution without making that false claim.
 """
 import contextlib
 import hashlib
@@ -83,6 +83,29 @@ class Ledger:
         if not row or row[0] != ROUND_ID:
             raise Halt('ledger_identity')
         self.contract = json.loads(row[1])
+        self.db.execute('CREATE TABLE IF NOT EXISTS observations (request_id TEXT PRIMARY KEY, evidence TEXT NOT NULL)')
+        self.db.execute('CREATE TABLE IF NOT EXISTS amendments (seq INTEGER PRIMARY KEY, evidence TEXT NOT NULL)')
+        self.db.commit()
+
+    def accept_nominal_accounting(self, evidence):
+        # Explicit authorization amendment, never a reset or fabricated provider proof.
+        if not evidence.get('user_authorized') or evidence.get('round_id') != ROUND_ID:
+            raise Halt('authorization_missing')
+        self.db.execute('BEGIN IMMEDIATE')
+        try:
+            state=self.summary()
+            if state['halted'] != 'unverified_billing_bound' or state['request_reservations'] != 0:
+                raise Halt('amendment_not_allowed')
+            c=dict(self.contract, user_accepted_nominal_accounting=True, settle_completed_to_nominal_usage=True)
+            self.db.execute('INSERT INTO amendments(evidence) VALUES (?)',(json.dumps(evidence),))
+            self.db.execute('UPDATE meta SET contract=?,halted=NULL',(json.dumps(c,sort_keys=True),))
+            self.db.commit(); self.contract=c
+        except BaseException:
+            self.db.rollback();raise
+
+    def observe(self, request_id, evidence):
+        with self.db:
+            self.db.execute('INSERT INTO observations VALUES (?,?)',(request_id,json.dumps(evidence,allow_nan=False)))
 
     def close(self): self.db.close()
 
@@ -91,10 +114,15 @@ class Ledger:
         with self.db:
             self.db.execute('UPDATE meta SET halted=COALESCE(halted,?)', (reason,))
 
+    def committed(self):
+        if self.contract.get('settle_completed_to_nominal_usage'):
+            return self.db.execute("SELECT COALESCE(sum(CASE WHEN state='completed' THEN estimated_nano ELSE reserve_nano END),0) FROM requests").fetchone()[0]
+        return self.db.execute('SELECT COALESCE(sum(reserve_nano),0) FROM requests').fetchone()[0]
+
     def summary(self):
         n, reserved, estimated = self.db.execute('SELECT count(*),COALESCE(sum(reserve_nano),0),COALESCE(sum(estimated_nano),0) FROM requests').fetchone()
         return {'round_id': ROUND_ID, 'request_reservations': n, 'reserved_nano_usd': reserved,
-                'estimated_nano_usd': estimated, 'budget_nano_usd': BUDGET_NANO,
+                'estimated_nano_usd': estimated, 'committed_nano_usd': self.committed(), 'budget_nano_usd': BUDGET_NANO,
                 'max_requests': MAX_REQUESTS,
                 'halted': self.db.execute('SELECT halted FROM meta').fetchone()[0],
                 'unresolved_requests': self.db.execute("SELECT count(*) FROM requests WHERE state='reserved'").fetchone()[0]}
@@ -109,7 +137,7 @@ class Ledger:
             if self.db.execute('SELECT halted FROM meta').fetchone()[0]: reason = 'round_halted'
             elif self.db.execute("SELECT 1 FROM requests WHERE state='reserved'").fetchone(): reason = 'unresolved_request'
             elif self.db.execute('SELECT 1 FROM requests WHERE request_id=?', (request_id,)).fetchone(): reason = 'duplicate_request'
-            elif c.get('reliable_billing_bound') is not True: reason = 'unverified_billing_bound'
+            elif c.get('reliable_billing_bound') is not True and c.get('user_accepted_nominal_accounting') is not True: reason = 'unverified_billing_bound'
             elif n >= MAX_REQUESTS: reason = 'request_limit'
             elif phase not in ('smoke', 'pilot'): reason = 'phase_invalid'
             elif not re.fullmatch('[a-zA-Z0-9:_-]{1,160}', request_id): reason = 'request_id_invalid'
@@ -123,7 +151,7 @@ class Ledger:
             values = [c.get(k) for k in ('input_bound','input_nano_per_token','output_nano_per_token')]
             if not reason and any(type(v) is not int or v <= 0 for v in values): reason = 'unknown_rate'
             amount = values[0]*values[1]+payload['max_tokens']*values[2] if not reason else 0
-            if not reason and reserved + amount > BUDGET_NANO: reason = 'budget_limit'
+            if not reason and self.committed() + amount > BUDGET_NANO: reason = 'budget_limit'
             if reason:
                 self.db.execute('UPDATE meta SET halted=COALESCE(halted,?)', (reason,))
                 self.db.commit()
@@ -175,20 +203,26 @@ def guarded_call(ledger, request_id, phase, payload, transport=None, credential_
     key=None
     start=time.monotonic()
     try:
-        # This is reached only with a verified billing contract; real-round contract is false.
+        # Contract is either verified or explicitly accepted as nominal accounting by user.
         key=credential_reader()
         if own: transport=session()
         with deadline(60):
             response=transport.post(ENDPOINT,json=payload,headers={'Authorization':'Bearer '+key},
                                     allow_redirects=False,verify=True,timeout=(10,50))
-            if response.status_code!=200: raise Halt('http_error')
+            if response.status_code!=200:
+                ledger.observe(request_id,{'http_status':response.status_code})
+                raise Halt('http_error')
             data=response.json()
             if data.get('object')!='chat.completion' or data.get('model')!=MODEL: raise Halt('response_protocol')
             choices=data.get('choices')
             if not isinstance(choices,list) or len(choices)!=1: raise Halt('choices_protocol')
             choice=choices[0]; content=choice.get('message',{}).get('content')
-            if choice.get('finish_reason')!='stop' or not isinstance(content,str): raise Halt('output_protocol')
+            if not isinstance(content,str): raise Halt('output_protocol')
             if key in content or re.search(r'sk-[A-Za-z0-9_-]{12,}',content): raise Halt('secret_in_response')
+            ledger.observe(request_id,{'http_status':200,'text':content,
+                                      'finish_reason':choice.get('finish_reason') if choice.get('finish_reason') in ('stop','length','content_filter') else 'OTHER',
+                                      'usage':{k:v for k,v in (data.get('usage') or {}).items() if k in ('prompt_tokens','completion_tokens','total_tokens') and type(v) is int and v>=0} if isinstance(data.get('usage'),dict) else None})
+            if choice.get('finish_reason')!='stop': raise Halt('output_protocol')
             u=data.get('usage')
             if not isinstance(u,dict): raise Halt('unknown_usage')
             # Unsupported billing-bearing fields require review; don't silently drop them.
